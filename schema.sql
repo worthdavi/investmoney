@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `wallstreet`.`advertising_historic` (
   `share_amount` INT NOT NULL,
   `share_price` INT NOT NULL,
   `type` TINYINT(6) NOT NULL,
-  `date` TIMESTAMP(16) NULL,
+  `date` TIMESTAMP(6) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
