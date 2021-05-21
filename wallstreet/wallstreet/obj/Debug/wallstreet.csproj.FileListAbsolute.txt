@@ -1,0 +1,9 @@
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\wallstreet.exe.config
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\wallstreet.exe
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\wallstreet.pdb
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.login_screen.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.Properties.Resources.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csproj.GenerateResource.cache
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csproj.CoreCompileInputs.cache
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.exe
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.pdb
