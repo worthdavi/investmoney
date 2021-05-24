@@ -15,3 +15,4 @@ C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\wallstreet_data.db
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\Dapper.dll
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\Dapper.xml
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csprojAssemblyReference.cache
