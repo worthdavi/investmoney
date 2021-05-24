@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,8 @@ namespace wallstreet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new login_screen());
+            User a = new User("davi", "davi@gmail.com", "davi123", 0, 0);
+            SQLiteControl.SaveUser(a);
         }
     }
 }
