@@ -1,1 +1,3 @@
-\wallstreet\bin\*
+wallstreet/wallstreet/bin/*
+wallstreet/wallstreet/obj/*
+wallstreet/.vs/*
