@@ -34,13 +34,14 @@ namespace wallstreet
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.btnLoginSubmit = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("LEMON MILK", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(565, 339);
+            this.lblUsername.Location = new System.Drawing.Point(660, 318);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(88, 19);
             this.lblUsername.TabIndex = 0;
@@ -48,7 +49,7 @@ namespace wallstreet
             // 
             // txtLoginUsername
             // 
-            this.txtLoginUsername.Location = new System.Drawing.Point(659, 338);
+            this.txtLoginUsername.Location = new System.Drawing.Point(754, 317);
             this.txtLoginUsername.Name = "txtLoginUsername";
             this.txtLoginUsername.Size = new System.Drawing.Size(117, 20);
             this.txtLoginUsername.TabIndex = 1;
@@ -57,7 +58,7 @@ namespace wallstreet
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("LEMON MILK", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(565, 372);
+            this.lblPassword.Location = new System.Drawing.Point(660, 351);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(86, 19);
             this.lblPassword.TabIndex = 2;
@@ -65,7 +66,7 @@ namespace wallstreet
             // 
             // txtLoginPassword
             // 
-            this.txtLoginPassword.Location = new System.Drawing.Point(659, 371);
+            this.txtLoginPassword.Location = new System.Drawing.Point(754, 350);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.PasswordChar = '*';
             this.txtLoginPassword.Size = new System.Drawing.Size(117, 20);
@@ -73,24 +74,40 @@ namespace wallstreet
             // 
             // btnLoginSubmit
             // 
-            this.btnLoginSubmit.Location = new System.Drawing.Point(679, 415);
+            this.btnLoginSubmit.Location = new System.Drawing.Point(775, 415);
             this.btnLoginSubmit.Name = "btnLoginSubmit";
             this.btnLoginSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnLoginSubmit.TabIndex = 4;
             this.btnLoginSubmit.Text = "Submit";
             this.btnLoginSubmit.UseVisualStyleBackColor = true;
+            this.btnLoginSubmit.Click += new System.EventHandler(this.btnLoginSubmit_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(662, 379);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(46, 12);
+            this.lblError.TabIndex = 5;
+            this.lblError.Text = "Error label";
+            this.lblError.Visible = false;
             // 
             // login_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(911, 450);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnLoginSubmit);
             this.Controls.Add(this.txtLoginPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtLoginUsername);
             this.Controls.Add(this.lblUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "login_screen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wallstreet - Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -104,6 +121,7 @@ namespace wallstreet
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtLoginPassword;
         private System.Windows.Forms.Button btnLoginSubmit;
+        public System.Windows.Forms.Label lblError;
     }
 }
 

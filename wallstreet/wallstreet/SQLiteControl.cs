@@ -12,7 +12,7 @@ namespace wallstreet
 {
     class SQLiteControl
     {
-        public static List<User> LoadUsers()
+        public static List<User> LoadUser()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
@@ -25,15 +25,24 @@ namespace wallstreet
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                connection.Execute("insert into user (username, email, password, type, balance) values ('" + user.username + "', '" + user.email + "', '" + user.password + "', '" + user.type + "', '" + user.balance + "')");
+                connection.Execute("insert into user (username, email, password, type, balance) values ('" +
+                    "" + user.username + "', '" + user.email + "', '" + user.password + "', '" + user.type + "', '" + user.balance + "')");
             }
         }
 
-
-        // Vou fazer
         public static bool TryLogin(string username, string password)
         {
-            return true;
+
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select COUNT(1) from user where user.username = '" + username + "' and user.password = '" + password + "'";
+                var result = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (result >= 1)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private static string LoadConnectionString(string id = "Default")
