@@ -1,7 +1,7 @@
 ﻿
 namespace wallstreet
 {
-    partial class login_screen
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -93,7 +93,7 @@ namespace wallstreet
             this.lblError.Text = "Error label";
             this.lblError.Visible = false;
             // 
-            // login_screen
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,9 +106,9 @@ namespace wallstreet
             this.Controls.Add(this.lblUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "login_screen";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Wallstreet - Login";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

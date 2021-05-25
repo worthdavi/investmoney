@@ -12,7 +12,7 @@ namespace wallstreet
 {
     class SQLiteControl
     {
-        public static List<User> LoadUser()
+        public static List<User> LoadUsers()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
@@ -26,7 +26,7 @@ namespace wallstreet
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
                 connection.Execute("insert into user (username, email, password, type, balance) values ('" +
-                    "" + user.username + "', '" + user.email + "', '" + user.password + "', '" + user.type + "', '" + user.balance + "')");
+                    "" + user.Username + "', '" + user.Email + "', '" + user.Password + "', '" + user.Type + "', '" + user.Balance + "')");
             }
         }
 
