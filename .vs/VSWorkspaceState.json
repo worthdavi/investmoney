@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\wallstreet",
-    "\\wallstreet\\wallstreet"
+    "\\wallstreet\\wallstreet",
+    "\\wallstreet\\wallstreet\\src",
+    "\\wallstreet\\wallstreet\\src\\Controllers",
+    "\\wallstreet\\wallstreet\\src\\DAO",
+    "\\wallstreet\\wallstreet\\src\\Models",
+    "\\wallstreet\\wallstreet\\src\\Views"
   ],
-  "SelectedNode": "\\wallstreet\\wallstreet\\Form1.cs",
+  "SelectedNode": "\\wallstreet\\wallstreet.sln",
   "PreviewInSolutionExplorer": false
 }
