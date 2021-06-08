@@ -30,19 +30,33 @@ namespace wallstreet
             }
         }
 
-        public static bool TryLogin(string username, string password)
+        public static User LoadUserById(int id)
         {
-
-            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            User userInfo = new User();
+            using (SQLiteConnection sqConnection = new SQLiteConnection(LoadConnectionString()))
             {
-                string query = "select COUNT(1) from user where user.username = '" + username + "' and user.password = '" + password + "'";
-                var result = Convert.ToInt32(connection.ExecuteScalar(query));
-                if (result >= 1)
+                SQLiteCommand sqCommand = (SQLiteCommand)sqConnection.CreateCommand();
+                sqCommand.CommandText = "select * from user where id = '" + id + "'";
+                sqConnection.Open();
+                SQLiteDataReader sqReader = sqCommand.ExecuteReader();
+                try
                 {
-                    return true;
+                    while (sqReader.Read())
+                    {
+                        userInfo.Username = sqReader.GetString(1); 
+                        userInfo.Email = sqReader.GetString(2);
+                        userInfo.Password = sqReader.GetString(3);
+                        userInfo.Type = sqReader.GetInt32(4);
+                        userInfo.Balance = sqReader.GetInt32(5);
+                    }
+                }
+                finally
+                {
+                    sqReader.Close();
+                    sqConnection.Close();
                 }
             }
-            return false;
+            return userInfo;
         }
 
         private static string LoadConnectionString(string id = "Default")

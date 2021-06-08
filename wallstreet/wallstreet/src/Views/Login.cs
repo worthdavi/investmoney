@@ -30,12 +30,11 @@ namespace wallstreet
                 lblError.Text = "Por favor, insira usuário e senha.";
                 return;
             }
-            //bool loggedIn1 = SQLiteControl.TryLogin(username, password);
+
             bool loggedIn = src.DAO.Auth.Login(username, password);
-           // Login
+
             if (loggedIn)
             {
-                // tem q passar o usuário pra a tela de home
                 Home home = new Home();
                 home.Show();
                 this.Hide();                
@@ -45,6 +44,7 @@ namespace wallstreet
                 lblError.Text = "Usuário ou senha incorretos.";
                 lblLostPassword.Visible = true;
             }
+
         }
 
         private void txtLogin_KeyDown(object sender, KeyEventArgs e)

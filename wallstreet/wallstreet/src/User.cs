@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace wallstreet
 {
-    class User
+    public class User
     {
         // Format: id, username, email, password, type, balance
         public string Username { get; set; }
@@ -15,15 +15,5 @@ namespace wallstreet
         public int Type { get; set; }
         public double Balance { get; set; }
 
-        public static User Load(string username, string email, string password, int type, double balance)
-        {
-            User user = new User();
-            user.Username = username;
-            user.Email = email;
-            user.Password = password;
-            user.Type = type;
-            user.Balance = balance;
-            return user;
-        }
     }
 }

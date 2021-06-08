@@ -36,6 +36,7 @@ namespace wallstreet.src.Views
             // 
             this.lblPainelAdministrativo.AutoSize = true;
             this.lblPainelAdministrativo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPainelAdministrativo.Enabled = false;
             this.lblPainelAdministrativo.Location = new System.Drawing.Point(795, 9);
             this.lblPainelAdministrativo.Name = "lblPainelAdministrativo";
             this.lblPainelAdministrativo.Size = new System.Drawing.Size(104, 13);

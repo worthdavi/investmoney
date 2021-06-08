@@ -19,10 +19,12 @@ namespace wallstreet.src.DAO
 
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                string query = "select COUNT(1) from user where user.username = '" + username + "' and user.password = '" + password + "'";
-                var result = Convert.ToInt32(connection.ExecuteScalar(query));
-                if (result >= 1)
+                string query = "select `id` from `user` where `user`.`username` = '" + username + "' and `user`.`password` = '" + password + "'";
+                var id = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (id != 0)
                 {
+                    // Setting global userId to load the user on other screens
+                    LoginInfo.UserId = id;
                     return true;
                 }
             }

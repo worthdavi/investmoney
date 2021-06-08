@@ -7,25 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wallstreet.src.DAO;
 
 namespace wallstreet.src.Views
 {
     public partial class Home : Form
     {
-        
+       
         public Home()
-        {       
-            InitializeComponent();         
-        }
-
-        // public User user = new User();
-
-        /* type = 1 significa que o usuário eh adm e libera o botão pra ele
-        if (user.Type == 1)
         {
-            lblPainelAdministrativo.Visible = true;
+            InitializeComponent();
+            LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
+            this.Text = this.Text + " - " + LoginInfo.GlobalUser.Username;
+            if (LoginInfo.GlobalUser.Type == 1)
+            {
+                lblPainelAdministrativo.Visible = true;
+                lblPainelAdministrativo.Enabled = true;
+            }
         }
-        */
 
         private void lblPainelAdministrativo_Click(object sender, EventArgs e)
         {
