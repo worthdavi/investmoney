@@ -43,22 +43,19 @@ namespace wallstreet
                 lblError.Visible = true;
                 lblError.ForeColor = Color.Red;
                 lblError.Text = "Usuário ou senha incorretos.";
+                lblLostPassword.Visible = true;
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void txtLogin_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+                btnLoginSubmit.PerformClick();
         }
 
-        private void lblError_Click(object sender, EventArgs e)
+        private void lblLostPassword_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Fale com um administrador para que o mesmo recupere sua senha.");
         }
     }
 }
