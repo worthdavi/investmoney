@@ -55,7 +55,7 @@ namespace wallstreet.src.Views
             this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Home - {0}";
             this.ResumeLayout(false);
             this.PerformLayout();
 

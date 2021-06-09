@@ -30,6 +30,33 @@ namespace wallstreet
             }
         }
 
+        public static bool IsUsernameRepeated(string name)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select `id` from `user` where `user`.`username` = '" + name + "'";
+                var id = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (id != 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool IsEmailRepeated(string email)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select `id` from `user` where `user`.`email` = '" + email + "'";
+                var id = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (id != 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public static User LoadUserById(int id)
         {
             User userInfo = new User();

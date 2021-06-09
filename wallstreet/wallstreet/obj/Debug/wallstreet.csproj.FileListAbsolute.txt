@@ -36,3 +36,5 @@ C:\Users\ovidi\source\repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug
 C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.exe
 C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.pdb
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csprojAssemblyReference.cache
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Users.UserRegister.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Admin.resources
