@@ -38,3 +38,4 @@ C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csprojAssemblyReference.cache
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Users.UserRegister.resources
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Admin.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Users.SearchUser.resources

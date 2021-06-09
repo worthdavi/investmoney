@@ -67,6 +67,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,12 @@
     </Compile>
     <Compile Include="src\Views\Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Admin\Users\SearchUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Admin\Users\SearchUser.Designer.cs">
+      <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Views\Admin\Users\UserRegister.cs">
       <SubType>Form</SubType>
@@ -124,6 +131,9 @@
     <EmbeddedResource Include="src\Views\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Admin\Users\SearchUser.resx">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Users\UserRegister.resx">
       <DependentUpon>UserRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +154,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\investmoney-brand.png" />
+    <None Include="Resources\search_icon1.png" />
     <Content Include="wallstreet_data.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -32,21 +32,19 @@ namespace wallstreet.src.Views.Admin
             this.btnRegisterUser = new System.Windows.Forms.Button();
             this.lblRegisterUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnSearchUser = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDeleteActive = new System.Windows.Forms.Button();
+            this.btnSearchActive = new System.Windows.Forms.Button();
             this.lblRegisterActive = new System.Windows.Forms.Label();
             this.btnRegisterActive = new System.Windows.Forms.Button();
             this.lblAdminPanel = new System.Windows.Forms.Label();
-            this.btnEditActive = new System.Windows.Forms.Button();
-            this.btnEditUser = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegisterUser
             // 
-            this.btnRegisterUser.Location = new System.Drawing.Point(35, 63);
+            this.btnRegisterUser.Location = new System.Drawing.Point(66, 63);
             this.btnRegisterUser.Name = "btnRegisterUser";
             this.btnRegisterUser.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterUser.TabIndex = 0;
@@ -67,8 +65,7 @@ namespace wallstreet.src.Views.Admin
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnEditUser);
-            this.panel1.Controls.Add(this.btnDeleteUser);
+            this.panel1.Controls.Add(this.btnSearchUser);
             this.panel1.Controls.Add(this.lblRegisterUser);
             this.panel1.Controls.Add(this.btnRegisterUser);
             this.panel1.Location = new System.Drawing.Point(12, 313);
@@ -76,20 +73,20 @@ namespace wallstreet.src.Views.Admin
             this.panel1.Size = new System.Drawing.Size(327, 125);
             this.panel1.TabIndex = 2;
             // 
-            // btnDeleteUser
+            // btnSearchUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(208, 63);
-            this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteUser.TabIndex = 1;
-            this.btnDeleteUser.Text = "Delete";
-            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnSearchUser.Location = new System.Drawing.Point(167, 63);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchUser.TabIndex = 2;
+            this.btnSearchUser.Text = "Search";
+            this.btnSearchUser.UseVisualStyleBackColor = true;
+            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnEditActive);
-            this.panel2.Controls.Add(this.btnDeleteActive);
+            this.panel2.Controls.Add(this.btnSearchActive);
             this.panel2.Controls.Add(this.lblRegisterActive);
             this.panel2.Controls.Add(this.btnRegisterActive);
             this.panel2.Location = new System.Drawing.Point(461, 313);
@@ -97,14 +94,14 @@ namespace wallstreet.src.Views.Admin
             this.panel2.Size = new System.Drawing.Size(327, 125);
             this.panel2.TabIndex = 3;
             // 
-            // btnDeleteActive
+            // btnSearchActive
             // 
-            this.btnDeleteActive.Location = new System.Drawing.Point(211, 63);
-            this.btnDeleteActive.Name = "btnDeleteActive";
-            this.btnDeleteActive.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteActive.TabIndex = 1;
-            this.btnDeleteActive.Text = "Delete";
-            this.btnDeleteActive.UseVisualStyleBackColor = true;
+            this.btnSearchActive.Location = new System.Drawing.Point(184, 63);
+            this.btnSearchActive.Name = "btnSearchActive";
+            this.btnSearchActive.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchActive.TabIndex = 2;
+            this.btnSearchActive.Text = "Search";
+            this.btnSearchActive.UseVisualStyleBackColor = true;
             // 
             // lblRegisterActive
             // 
@@ -118,7 +115,7 @@ namespace wallstreet.src.Views.Admin
             // 
             // btnRegisterActive
             // 
-            this.btnRegisterActive.Location = new System.Drawing.Point(37, 63);
+            this.btnRegisterActive.Location = new System.Drawing.Point(73, 63);
             this.btnRegisterActive.Name = "btnRegisterActive";
             this.btnRegisterActive.Size = new System.Drawing.Size(75, 23);
             this.btnRegisterActive.TabIndex = 0;
@@ -134,24 +131,6 @@ namespace wallstreet.src.Views.Admin
             this.lblAdminPanel.Size = new System.Drawing.Size(368, 25);
             this.lblAdminPanel.TabIndex = 4;
             this.lblAdminPanel.Text = "Welcome to the admin panel, {0}";
-            // 
-            // btnEditActive
-            // 
-            this.btnEditActive.Location = new System.Drawing.Point(125, 63);
-            this.btnEditActive.Name = "btnEditActive";
-            this.btnEditActive.Size = new System.Drawing.Size(75, 23);
-            this.btnEditActive.TabIndex = 2;
-            this.btnEditActive.Text = "Edit";
-            this.btnEditActive.UseVisualStyleBackColor = true;
-            // 
-            // btnEditUser
-            // 
-            this.btnEditUser.Location = new System.Drawing.Point(122, 63);
-            this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(75, 23);
-            this.btnEditUser.TabIndex = 2;
-            this.btnEditUser.Text = "Edit";
-            this.btnEditUser.UseVisualStyleBackColor = true;
             // 
             // Admin
             // 
@@ -177,13 +156,11 @@ namespace wallstreet.src.Views.Admin
         private System.Windows.Forms.Button btnRegisterUser;
         private System.Windows.Forms.Label lblRegisterUser;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDeleteActive;
         private System.Windows.Forms.Label lblRegisterActive;
         private System.Windows.Forms.Button btnRegisterActive;
         private System.Windows.Forms.Label lblAdminPanel;
-        private System.Windows.Forms.Button btnEditUser;
-        private System.Windows.Forms.Button btnEditActive;
+        private System.Windows.Forms.Button btnSearchUser;
+        private System.Windows.Forms.Button btnSearchActive;
     }
 }

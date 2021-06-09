@@ -27,5 +27,11 @@ namespace wallstreet.src.Views.Admin
             UserRegister screen = new UserRegister(this);
             screen.Show();
         }
+
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            SearchUser screen = new SearchUser(this);
+            screen.Show();
+        }
     }
 }

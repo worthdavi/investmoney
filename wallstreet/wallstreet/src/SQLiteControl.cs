@@ -12,7 +12,7 @@ namespace wallstreet
 {
     class SQLiteControl
     {
-        public static List<User> LoadUsers()
+        public static List<User> GetUserList()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
