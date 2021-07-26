@@ -62,3 +62,4 @@ C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\ob
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.exe
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.pdb
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.ativos.RegisterActive.resources
+C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Actives.SearchActive.resources

@@ -79,11 +79,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Controllers\ActiveController.cs" />
     <Compile Include="src\Controllers\UserController.cs" />
+    <Compile Include="src\DAO\ActiveDao.cs" />
     <Compile Include="src\DAO\Auth.cs" />
     <Compile Include="src\DAO\LoginInfo.cs" />
     <Compile Include="src\DAO\UserDao.cs" />
+    <Compile Include="src\Models\ActiveModel.cs" />
     <Compile Include="src\Models\User.cs" />
+    <Compile Include="src\Views\Admin\Actives\SearchActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Admin\Actives\SearchActive.Designer.cs">
+      <DependentUpon>SearchActive.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Views\Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="src\Views\Admin\Actives\RegisterActive.resx">
       <DependentUpon>RegisterActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Admin\Actives\SearchActive.resx">
+      <DependentUpon>SearchActive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>

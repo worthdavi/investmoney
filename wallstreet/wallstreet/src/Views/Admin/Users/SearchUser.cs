@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wallstreet.src.Controllers;
+using wallstreet.src.DAO;
 
 namespace wallstreet.src.Views.Admin.Users
 {
@@ -19,7 +21,8 @@ namespace wallstreet.src.Views.Admin.Users
             InitializeComponent();
             this.previousScreen = previousScreen;
             this.previousScreen.Enabled = false;
-            UserTable.DataSource = SQLiteControl.GetUserList();
+            UserController userController = new UserController();
+            UserTable.DataSource = userController.GetAllUsers();
             cBoxSearchBy.SelectedIndex = 0;
         }
 

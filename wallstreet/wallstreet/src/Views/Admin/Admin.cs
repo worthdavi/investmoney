@@ -11,6 +11,7 @@ using wallstreet.src.DAO;
 using wallstreet.src.Views;
 using wallstreet.src.Views.Admin.Users;
 using wallstreet.src.Views.Admin.ativos;
+using wallstreet.src.Views.Admin.Actives;
 
 namespace wallstreet.src.Views.Admin
 {
@@ -41,6 +42,19 @@ namespace wallstreet.src.Views.Admin
             registerActive.Show();
             this.Hide();
 
+        }
+
+        private void btnSearchActive_Click(object sender, EventArgs e)
+        {
+            SearchActive screen = new SearchActive(this);
+            screen.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
     }
 }

@@ -73,7 +73,7 @@ namespace wallstreet.src.Views.Admin.Users
             List<TextBox> Boxes = GetTxtList();
             List<Label> Labels = GetLabelList();
             ResetLabels(Labels);
-
+            UserController userController = new UserController();
             if (hasEmptyBoxes(Boxes))
             {
                 MessageBox.Show("Please, fill all fields.");
@@ -82,14 +82,14 @@ namespace wallstreet.src.Views.Admin.Users
 
             bool alright = true;
 
-            if (SQLiteControl.IsUsernameRepeated(txtUsername.Text))
+            if (userController.IsUsernameRepeated(txtUsername.Text))
             {
                 alright = false;
                 lblUsernameError.Visible = true;
                 lblUsernameError.Text = "This username is already in use.";
             }
 
-            if (SQLiteControl.IsEmailRepeated(txtEmail.Text))
+            if (userController.IsEmailRepeated(txtEmail.Text))
             {
                 alright = false;
                 lblEmailError.Visible = true;
@@ -114,11 +114,10 @@ namespace wallstreet.src.Views.Admin.Users
             {
                 return;
             }
-            UserController userController = new UserController();
             String user = userController.create(txtUsername.Text, txtEmail.Text, txtPassword.Text, txtType.Text, txtBalance.Text);
             if (user == txtUsername.Text)
             {
-                MessageBox.Show("You succesfully created the user " + user);
+                MessageBox.Show("You succesfully created the user " + user.ToUpper());
                 this.previousScreen.Enabled = true;
                 this.Hide();
             }

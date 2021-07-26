@@ -21,5 +21,17 @@ namespace wallstreet.src.Controllers
             else return "false";
 
         }
+        public List<User> GetAllUsers()
+        {
+            return UserDao.GetUserList();
+        }
+        public bool IsEmailRepeated(string email)
+        {
+            return UserDao.IsEmailRepeated(email);
+        }
+        public bool IsUsernameRepeated(string nome)
+        {
+            return UserDao.IsUsernameRepeated(nome);
+        }
     }
 }

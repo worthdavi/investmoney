@@ -38,6 +38,7 @@ namespace wallstreet.src.Views.Admin
             this.lblRegisterActive = new System.Windows.Forms.Label();
             this.btnRegisterActive = new System.Windows.Forms.Button();
             this.lblAdminPanel = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +46,7 @@ namespace wallstreet.src.Views.Admin
             // btnRegisterUser
             // 
             this.btnRegisterUser.Location = new System.Drawing.Point(88, 78);
-            this.btnRegisterUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegisterUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegisterUser.Name = "btnRegisterUser";
             this.btnRegisterUser.Size = new System.Drawing.Size(100, 28);
             this.btnRegisterUser.TabIndex = 0;
@@ -71,7 +72,7 @@ namespace wallstreet.src.Views.Admin
             this.panel1.Controls.Add(this.lblRegisterUser);
             this.panel1.Controls.Add(this.btnRegisterUser);
             this.panel1.Location = new System.Drawing.Point(16, 385);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 153);
             this.panel1.TabIndex = 2;
@@ -79,7 +80,7 @@ namespace wallstreet.src.Views.Admin
             // btnSearchUser
             // 
             this.btnSearchUser.Location = new System.Drawing.Point(223, 78);
-            this.btnSearchUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchUser.Name = "btnSearchUser";
             this.btnSearchUser.Size = new System.Drawing.Size(100, 28);
             this.btnSearchUser.TabIndex = 2;
@@ -94,7 +95,7 @@ namespace wallstreet.src.Views.Admin
             this.panel2.Controls.Add(this.lblRegisterActive);
             this.panel2.Controls.Add(this.btnRegisterActive);
             this.panel2.Location = new System.Drawing.Point(615, 385);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(435, 153);
             this.panel2.TabIndex = 3;
@@ -102,12 +103,13 @@ namespace wallstreet.src.Views.Admin
             // btnSearchActive
             // 
             this.btnSearchActive.Location = new System.Drawing.Point(245, 78);
-            this.btnSearchActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchActive.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchActive.Name = "btnSearchActive";
             this.btnSearchActive.Size = new System.Drawing.Size(100, 28);
             this.btnSearchActive.TabIndex = 2;
             this.btnSearchActive.Text = "Search";
             this.btnSearchActive.UseVisualStyleBackColor = true;
+            this.btnSearchActive.Click += new System.EventHandler(this.btnSearchActive_Click);
             // 
             // lblRegisterActive
             // 
@@ -123,7 +125,7 @@ namespace wallstreet.src.Views.Admin
             // btnRegisterActive
             // 
             this.btnRegisterActive.Location = new System.Drawing.Point(97, 78);
-            this.btnRegisterActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegisterActive.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegisterActive.Name = "btnRegisterActive";
             this.btnRegisterActive.Size = new System.Drawing.Size(100, 28);
             this.btnRegisterActive.TabIndex = 0;
@@ -142,15 +144,27 @@ namespace wallstreet.src.Views.Admin
             this.lblAdminPanel.TabIndex = 4;
             this.lblAdminPanel.Text = "Welcome to the admin panel, {0}";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(891, 61);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(70, 17);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "tela inicial";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblAdminPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.panel1.ResumeLayout(false);
@@ -173,5 +187,6 @@ namespace wallstreet.src.Views.Admin
         private System.Windows.Forms.Label lblAdminPanel;
         private System.Windows.Forms.Button btnSearchUser;
         private System.Windows.Forms.Button btnSearchActive;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
