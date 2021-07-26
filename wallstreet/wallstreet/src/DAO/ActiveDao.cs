@@ -13,12 +13,12 @@ namespace wallstreet.src.DAO
 {
     class ActiveDao
     {
-        public int Create(String ticker, int share_amount, int share_price, String description)
+        public int Create(String ticker, int amount, int price, String description)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                return connection.Execute("insert into actives (ticker, share_amount, share_price, description) values ('" +
-                    "" + ticker + "', '" + share_amount + "', '" + share_price + "', '" + description + "')");
+                return connection.Execute("insert into active (ticker, amount, price, description) values ('" +
+                    "" + ticker + "', '" + amount + "', '" + price + "', '" + description + "')");
                 // Console.WriteLine(" aqui {0}", cul);
             }
         }
@@ -27,7 +27,7 @@ namespace wallstreet.src.DAO
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = connection.Query<ActiveModel>("select * from actives", new DynamicParameters());
+                var output = connection.Query<ActiveModel>("select * from active", new DynamicParameters());
                 return output.ToList();
             }
         }

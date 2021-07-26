@@ -8,10 +8,10 @@ namespace wallstreet.src.Models
 {
     class ActiveModel
     {
-        // Format: ticker,share_amount, share_price, description
+        // Format: ticker, amount, price, description
         public string ticker { get; set; }
-        public int share_amount { get; set; }
-        public int share_price { get; set; }
+        public int amount { get; set; }
+        public int price { get; set; }
         public string description { get; set; }
     }
 }

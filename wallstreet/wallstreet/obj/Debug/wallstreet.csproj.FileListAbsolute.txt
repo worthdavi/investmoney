@@ -11,7 +11,6 @@ C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\System.Dat
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\System.Data.SQLite.xml
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csproj.CopyComplete
-C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\wallstreet_data.db
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\Dapper.dll
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\Dapper.xml
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.home.resources
@@ -35,7 +34,6 @@ C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug
 C:\Users\ovidi\source\repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csproj.CopyComplete
 C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.exe
 C:\Users\ovidi\Source\Repos\worthdavi\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.pdb
-C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.csprojAssemblyReference.cache
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Users.UserRegister.resources
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Admin.resources
 C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Users.SearchUser.resources
@@ -63,3 +61,6 @@ C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\ob
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.pdb
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.ativos.RegisterActive.resources
 C:\Users\ovidi\OneDrive\Área de Trabalho\PI\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Actives.SearchActive.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.ativos.RegisterActive.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\obj\Debug\wallstreet.src.Views.Admin.Actives.SearchActive.resources
+C:\Users\worthdavi\Desktop\wallstreet\wallstreet\wallstreet\bin\Debug\data.db
