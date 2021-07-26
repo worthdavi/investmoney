@@ -44,6 +44,7 @@ CREATE TABLE `user` (
   `balance` DECIMAL(10) NULL
 );
 
+-- Creating default user (admin)
 INSERT INTO user (username, email, password, type, balance) VALUES ('admin', 'admin@admin.com', 'admin', 1, 8000);
 
 -- Table: wallet
