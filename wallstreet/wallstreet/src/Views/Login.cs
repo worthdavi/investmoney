@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using wallstreet.src.DAO;
 using wallstreet.src.Views;
 
 namespace wallstreet
@@ -31,7 +26,7 @@ namespace wallstreet
                 return;
             }
 
-            bool loggedIn = src.DAO.Auth.Login(username, password);
+            bool loggedIn = Auth.Login(username, password);
 
             if (loggedIn)
             {

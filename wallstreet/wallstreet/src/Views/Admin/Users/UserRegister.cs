@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using wallstreet.src.Controllers;
 
 namespace wallstreet.src.Views.Admin.Users
 {
@@ -119,17 +114,20 @@ namespace wallstreet.src.Views.Admin.Users
             {
                 return;
             }
-
-            User UserToSave = new User();
-            UserToSave.Username = txtUsername.Text;
-            UserToSave.Email = txtEmail.Text;
-            UserToSave.Password = txtPassword.Text;
-            UserToSave.Type = Convert.ToInt32(txtType.Text);
-            UserToSave.Balance = Convert.ToInt32(txtBalance.Text);
-            SQLiteControl.SaveUser(UserToSave);
-            MessageBox.Show("You succesfully created the user " + UserToSave.Username);
-            this.Hide();
-            this.previousScreen.Enabled = true;
+            UserController userController = new UserController();
+            String user = userController.create(txtUsername.Text, txtEmail.Text, txtPassword.Text, txtType.Text, txtBalance.Text);
+            if (user == txtUsername.Text)
+            {
+                MessageBox.Show("You succesfully created the user " + user);
+                this.previousScreen.Enabled = true;
+                this.Hide();
+            }
+            if (user == "false")
+            {
+                MessageBox.Show("fail to create user ");
+                this.previousScreen.Enabled = true;
+                this.Hide();
+            }
         }
 
         private void txtRegister_KeyDown(object sender, KeyEventArgs e)

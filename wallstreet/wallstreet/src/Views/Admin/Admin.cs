@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using wallstreet.src.DAO;
 using wallstreet.src.Views;
 using wallstreet.src.Views.Admin.Users;
+using wallstreet.src.Views.Admin.ativos;
 
 namespace wallstreet.src.Views.Admin
 {
@@ -32,6 +33,14 @@ namespace wallstreet.src.Views.Admin
         {
             SearchUser screen = new SearchUser(this);
             screen.Show();
+        }
+
+        private void btnRegisterActive_Click(object sender, EventArgs e)
+        {
+            RegisterActive registerActive = new RegisterActive();
+            registerActive.Show();
+            this.Hide();
+
         }
     }
 }

@@ -79,13 +79,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Controllers\UserController.cs" />
     <Compile Include="src\DAO\Auth.cs" />
     <Compile Include="src\DAO\LoginInfo.cs" />
+    <Compile Include="src\DAO\UserDao.cs" />
+    <Compile Include="src\Models\User.cs" />
     <Compile Include="src\Views\Admin\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\Views\Admin\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Admin\Actives\RegisterActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Admin\Actives\RegisterActive.Designer.cs">
+      <DependentUpon>RegisterActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Views\Admin\Users\RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Admin\Users\RegisterUser.Designer.cs">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Views\Admin\Users\SearchUser.cs">
       <SubType>Form</SubType>
@@ -105,7 +120,6 @@
     <Compile Include="src\DAO\teste.cs" />
     <Compile Include="src\Models\teste.cs" />
     <Compile Include="src\SQLiteControl.cs" />
-    <Compile Include="src\User.cs" />
     <Compile Include="src\Views\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +142,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="src\Views\Admin\Actives\RegisterActive.resx">
+      <DependentUpon>RegisterActive.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +191,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Views\Admin\Actives\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

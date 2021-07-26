@@ -21,12 +21,13 @@ namespace wallstreet
             }
         }
 
-        public static void SaveUser(User user)
+        public static int SaveUser(User user)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                connection.Execute("insert into user (username, email, password, type, balance) values ('" +
+                return connection.Execute("insert into user (username, email, password, type, balance) values ('" +
                     "" + user.Username + "', '" + user.Email + "', '" + user.Password + "', '" + user.Type + "', '" + user.Balance + "')");
+                // Console.WriteLine(" aqui {0}", cul);
             }
         }
 

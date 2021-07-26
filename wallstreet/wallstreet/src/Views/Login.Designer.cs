@@ -1,4 +1,5 @@
 ﻿
+
 namespace wallstreet
 {
     partial class Login
