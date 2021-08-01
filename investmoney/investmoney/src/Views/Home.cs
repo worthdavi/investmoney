@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using investmoney.src.Controllers;
 using investmoney.src.DAO;
 using investmoney.src.Views.Admin;
 
@@ -20,6 +21,8 @@ namespace investmoney.src.Views
             InitializeComponent();
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
             this.Text = String.Format(this.Text,  LoginInfo.GlobalUser.Username);
+            ActiveController activeController = new ActiveController();
+            //dataTableActives.DataSource
             if (LoginInfo.GlobalUser.Type == 1)
             {
                 lblPainelAdministrativo.Visible = true;

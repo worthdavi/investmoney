@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace investmoney.src.DAO
 {
     public static class LoginInfo
-    {
+    {      
         public static int UserId;
         public static User GlobalUser = new User();
     }

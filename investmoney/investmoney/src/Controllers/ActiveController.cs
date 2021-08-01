@@ -21,6 +21,7 @@ namespace investmoney.src.Controllers
             if (result == 1) return 1;
             else return 0;
         }
+
         public List<ActiveModel> GetActiveList()
         {
             ActiveDao activeDao = new ActiveDao();
