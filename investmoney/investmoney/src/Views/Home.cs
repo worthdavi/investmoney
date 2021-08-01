@@ -21,8 +21,11 @@ namespace investmoney.src.Views
             InitializeComponent();
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
             this.Text = String.Format(this.Text,  LoginInfo.GlobalUser.Username);
-            ActiveController activeController = new ActiveController();
-            //dataTableActives.DataSource
+            double accountBalance = Convert.ToInt32(LoginInfo.GlobalUser.Balance);
+            this.lblAccountBalance.Text = String.Format("Your account balance is: {0:C}", accountBalance);
+            WalletController walletController = new WalletController();
+            dataTableActives.DataSource = walletController.LoadUserWallet(LoginInfo.UserId);
+            dataTableActives.Columns["unity"].DefaultCellStyle.Format = "C";
             if (LoginInfo.GlobalUser.Type == 1)
             {
                 lblPainelAdministrativo.Visible = true;
