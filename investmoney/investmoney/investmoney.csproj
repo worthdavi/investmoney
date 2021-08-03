@@ -81,12 +81,15 @@
   <ItemGroup>
     <Compile Include="src\Controllers\ActiveController.cs" />
     <Compile Include="src\Controllers\UserController.cs" />
+    <Compile Include="src\Controllers\WalletController.cs" />
     <Compile Include="src\DAO\ActiveDao.cs" />
     <Compile Include="src\DAO\Auth.cs" />
     <Compile Include="src\DAO\LoginInfo.cs" />
     <Compile Include="src\DAO\UserDao.cs" />
+    <Compile Include="src\DAO\WalletDao.cs" />
     <Compile Include="src\Models\ActiveModel.cs" />
     <Compile Include="src\Models\User.cs" />
+    <Compile Include="src\Models\Wallet.cs" />
     <Compile Include="src\Views\Admin\Actives\SearchActive.cs">
       <SubType>Form</SubType>
     </Compile>
