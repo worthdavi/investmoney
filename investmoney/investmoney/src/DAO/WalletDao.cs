@@ -19,7 +19,7 @@ namespace investmoney.src.DAO
             {
                 //  id, amount, price, user_id, ticker, description
                 string query = "select wallet.id, wallet.amount as amount, active.price as unity, active.ticker as ticker, active.description as description from wallet" +
-                    " inner join user on wallet.user_id = user.id" +
+                    " inner join user on wallet.user_id = " + userId +
                     " inner join active on wallet.actives_ticker = active.ticker;";
                 var output = connection.Query<Wallet>(query, new DynamicParameters());
                 return output.ToList();

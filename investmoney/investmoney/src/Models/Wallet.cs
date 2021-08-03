@@ -17,6 +17,9 @@ namespace investmoney.src.Models
         public double unity { get; set; }
         private int user_id { get; set; }
         public string description { get; set; }
+
+        public double boughtBy { get; set; }
+        public double worthBy { get; set; }
         
     }
 }

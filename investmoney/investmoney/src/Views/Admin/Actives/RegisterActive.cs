@@ -13,9 +13,12 @@ namespace investmoney.src.Views.Admin.ativos
 {
     public partial class RegisterActive : Form
     {
-        public RegisterActive()
+        public Admin previousScreen = new Admin();       
+        public RegisterActive(Admin previousScreen)
         {
             InitializeComponent();
+            this.previousScreen = previousScreen;
+            this.previousScreen.Enabled = false;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

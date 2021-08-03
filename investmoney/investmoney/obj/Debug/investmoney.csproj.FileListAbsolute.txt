@@ -27,7 +27,6 @@ C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investm
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Actives.SearchActive.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Admin.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Users.SearchUser.resources
-C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Users.UserRegister.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Home.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.Login.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.csproj.GenerateResource.cache
@@ -45,3 +44,4 @@ C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\System.
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\Dapper.xml
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\System.Data.SQLite.xml
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.csproj.CopyComplete
+C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Users.RegisterUser.resources

@@ -26,7 +26,7 @@ namespace investmoney.src.Views.Admin
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
-            UserRegister screen = new UserRegister(this);
+            RegisterUser screen = new RegisterUser(this);
             screen.Show();
         }
 
@@ -38,10 +38,8 @@ namespace investmoney.src.Views.Admin
 
         private void btnRegisterActive_Click(object sender, EventArgs e)
         {
-            RegisterActive registerActive = new RegisterActive();
+            RegisterActive registerActive = new RegisterActive(this);
             registerActive.Show();
-            this.Hide();
-
         }
 
         private void btnSearchActive_Click(object sender, EventArgs e)
@@ -50,11 +48,11 @@ namespace investmoney.src.Views.Admin
             screen.Show();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
             Home home = new Home();
             home.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
