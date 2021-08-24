@@ -15,13 +15,11 @@ namespace investmoney.src.Views
 {
     public partial class Home : Form
     {
-       
-        public Home()
+        public void reloadInfo()
         {
-            InitializeComponent();
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
-            this.Text = String.Format(this.Text,  LoginInfo.GlobalUser.Username);
-            double accountBalance = Convert.ToInt32(LoginInfo.GlobalUser.Balance);           
+            this.Text = String.Format(this.Text, LoginInfo.GlobalUser.Username);
+            double accountBalance = Convert.ToInt32(LoginInfo.GlobalUser.Balance);
             this.lblAccountBalance.Text = String.Format("Your account balance is: {0:C}", accountBalance);
             WalletController walletController = new WalletController();
             dataTableActives.DataSource = walletController.LoadUserWallet(LoginInfo.UserId);
@@ -38,6 +36,12 @@ namespace investmoney.src.Views
                 btnPainelAdministrativo.Enabled = true;
             }
         }
+       
+        public Home()
+        {
+            InitializeComponent();
+            reloadInfo();
+        }
 
         private void btnPainelAdministrativo_Click(object sender, EventArgs e)
         {
@@ -50,6 +54,11 @@ namespace investmoney.src.Views
         {
             Advertise.Sell sellScreen = new Advertise.Sell(this);
             sellScreen.Show();
+        }
+
+        private void Home_Activated(object sender, EventArgs e)
+        {
+            reloadInfo();
         }
     }
 }

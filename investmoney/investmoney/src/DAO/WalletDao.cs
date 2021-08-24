@@ -42,12 +42,25 @@ namespace investmoney.src.DAO
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                //  id, amount, price, user_id, ticker, description
                 string query = "select wallet.amount as amount from wallet inner join user on user.id = wallet.user_id where wallet.actives_ticker = '" + ticker + "' and user.id = " + userId;
                 var amount = Convert.ToInt32(connection.ExecuteScalar(query));
                 if (amount != 0)
                 {
                     return amount;
+                }
+                return 0;
+            }
+        }
+
+        public int SetActivesAmountByTickerId(int userId, string ticker, int amount)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "UPDATE wallet SET amount = ((SELECT amount FROM wallet INNER JOIN user ON user.id = wallet.user_id WHERE user.id = "+userId+" AND wallet.actives_ticker = '"+ticker+"') - "+amount+")";
+                var result = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (result != 0)
+                {
+                    return result;
                 }
                 return 0;
             }

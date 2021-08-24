@@ -16,6 +16,7 @@ namespace investmoney.src.Views.Advertise
     {
         public Home previousScreen = new Home();
         WalletController walletController = new WalletController();
+        public int limitAmount = 0;
         public Sell(Home previousScreen)
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace investmoney.src.Views.Advertise
                 lblAmount.Visible = true;
                 txtAmount.Visible = true;
                 lblLimit.Text = "/" + Convert.ToString(walletController.GetActivesAmountByTickerId(LoginInfo.UserId, cBoxActives.Text));
+                this.limitAmount = walletController.GetActivesAmountByTickerId(LoginInfo.UserId, cBoxActives.Text);
                 lblLimit.Visible = true;
             }
             else
@@ -110,6 +112,25 @@ namespace investmoney.src.Views.Advertise
                 lblInfo.Text = "You are going to sell {0} {1} actions for R$ {2}.";
             }
             lblInfo.Text = String.Format("You are going to sell {0} {1} actions for R$ {2},00.", txtAmount.Text, cBoxActives.Text, txtPrice.Text);
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            int amount = Convert.ToInt32(txtAmount.Text);
+            int price = Convert.ToInt32(txtPrice.Text);
+            int wallet_id = 1;
+            if (amount > this.limitAmount)
+            {
+                MessageBox.Show("You do not have enough actions. Your " + cBoxActives.Text + " actives amount is " + this.limitAmount);
+                return;
+            }
+            AdvertiseController controller = new AdvertiseController();
+            controller.CreateOffer(amount, price, 0, wallet_id);
+            walletController.SetActivesAmountByTickerId(LoginInfo.UserId, cBoxActives.Text, amount);
+            MessageBox.Show("You succesfully created an offer. Details:\n" +
+                "You are now selling " + amount + " of " + cBoxActives.Text + " actives for R$" + price + ",00 each! :)");
+            this.previousScreen.Enabled = true;
+            this.Close();
         }
     }
 }

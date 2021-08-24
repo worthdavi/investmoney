@@ -29,17 +29,17 @@ namespace investmoney.src.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataTableActives = new System.Windows.Forms.DataGridView();
             this.btnBuyActives = new System.Windows.Forms.Button();
             this.btnSellActives = new System.Windows.Forms.Button();
             this.lblAccountBalance = new System.Windows.Forms.Label();
             this.lblActivesBalance = new System.Windows.Forms.Label();
-            this.pnlLogoHome = new System.Windows.Forms.Panel();
-            this.btnPainelAdministrativo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMenuName = new System.Windows.Forms.Label();
             this.lblHistory = new System.Windows.Forms.Label();
+            this.btnPainelAdministrativo = new System.Windows.Forms.Button();
+            this.pnlLogoHome = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableActives)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,14 +52,14 @@ namespace investmoney.src.Views
             this.dataTableActives.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTableActives.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataTableActives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataTableActives.GridColor = System.Drawing.Color.White;
             this.dataTableActives.Location = new System.Drawing.Point(12, 107);
             this.dataTableActives.MultiSelect = false;
@@ -106,27 +106,6 @@ namespace investmoney.src.Views
             this.lblActivesBalance.TabIndex = 7;
             this.lblActivesBalance.Text = "Your actives balance is: ?";
             // 
-            // pnlLogoHome
-            // 
-            this.pnlLogoHome.BackgroundImage = global::investmoney.Properties.Resources.investmoney_brand;
-            this.pnlLogoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlLogoHome.Location = new System.Drawing.Point(294, 4);
-            this.pnlLogoHome.Name = "pnlLogoHome";
-            this.pnlLogoHome.Size = new System.Drawing.Size(338, 100);
-            this.pnlLogoHome.TabIndex = 8;
-            // 
-            // btnPainelAdministrativo
-            // 
-            this.btnPainelAdministrativo.BackgroundImage = global::investmoney.Properties.Resources.Engrenagem_Bicolor_PNG;
-            this.btnPainelAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPainelAdministrativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPainelAdministrativo.Location = new System.Drawing.Point(864, 4);
-            this.btnPainelAdministrativo.Name = "btnPainelAdministrativo";
-            this.btnPainelAdministrativo.Size = new System.Drawing.Size(35, 33);
-            this.btnPainelAdministrativo.TabIndex = 9;
-            this.btnPainelAdministrativo.UseVisualStyleBackColor = true;
-            this.btnPainelAdministrativo.Click += new System.EventHandler(this.btnPainelAdministrativo_Click);
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -159,6 +138,27 @@ namespace investmoney.src.Views
             this.lblHistory.TabIndex = 11;
             this.lblHistory.Text = "Click here to see your transactions history";
             // 
+            // btnPainelAdministrativo
+            // 
+            this.btnPainelAdministrativo.BackgroundImage = global::investmoney.Properties.Resources.Engrenagem_Bicolor_PNG;
+            this.btnPainelAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPainelAdministrativo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPainelAdministrativo.Location = new System.Drawing.Point(864, 4);
+            this.btnPainelAdministrativo.Name = "btnPainelAdministrativo";
+            this.btnPainelAdministrativo.Size = new System.Drawing.Size(35, 33);
+            this.btnPainelAdministrativo.TabIndex = 9;
+            this.btnPainelAdministrativo.UseVisualStyleBackColor = true;
+            this.btnPainelAdministrativo.Click += new System.EventHandler(this.btnPainelAdministrativo_Click);
+            // 
+            // pnlLogoHome
+            // 
+            this.pnlLogoHome.BackgroundImage = global::investmoney.Properties.Resources.investmoney_brand;
+            this.pnlLogoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlLogoHome.Location = new System.Drawing.Point(294, 4);
+            this.pnlLogoHome.Name = "pnlLogoHome";
+            this.pnlLogoHome.Size = new System.Drawing.Size(338, 100);
+            this.pnlLogoHome.TabIndex = 8;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +176,7 @@ namespace investmoney.src.Views
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home - {0}";
+            this.Activated += new System.EventHandler(this.Home_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataTableActives)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

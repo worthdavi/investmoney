@@ -99,6 +99,7 @@ namespace investmoney.src.Views.Advertise
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Visible = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lblAmount
             // 

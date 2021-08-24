@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using investmoney.src.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -30,6 +31,17 @@ namespace investmoney
                 // Console.WriteLine(" aqui {0}", cul);
             }
         }
+
+
+        public static int CreateOffer(AdvertiseModel offer)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                return connection.Execute("insert into advertise (amount, price, type, wallet_id) values ('" +
+                    "" + offer.amount + "', '" + offer.price + "', '" + offer.type + "', '" + offer.wallet_id + "')");
+            }
+        }
+
 
         public static bool IsUsernameRepeated(string name)
         {
