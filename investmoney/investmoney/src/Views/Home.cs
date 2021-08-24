@@ -46,5 +46,10 @@ namespace investmoney.src.Views
             this.Hide();
         }
 
+        private void btnSellActives_Click(object sender, EventArgs e)
+        {
+            Advertise.Sell sellScreen = new Advertise.Sell(this);
+            sellScreen.Show();
+        }
     }
 }

@@ -120,6 +120,12 @@
     <Compile Include="src\Views\Admin\Users\SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Views\Advertise\Sell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Views\Advertise\Sell.Designer.cs">
+      <DependentUpon>Sell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Controllers\teste.cs" />
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Users\SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Views\Advertise\Sell.resx">
+      <DependentUpon>Sell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

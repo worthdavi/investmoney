@@ -16,5 +16,19 @@ namespace investmoney.src.Controllers
             List<Wallet> list = wallet.LoadUserWallet(userId);
             return list;
         }
+
+        public List<String> GetActivesByUserId(int userId)
+        {
+            WalletDao wallet = new WalletDao();
+            List<String> list = wallet.GetActivesByUserId(userId);
+            return list;
+        }
+
+        public int GetActivesAmountByTickerId(int userId, string ticker)
+        {
+            WalletDao wallet = new WalletDao();
+            int amount = wallet.GetActivesAmountByTickerId(userId, ticker);
+            return amount;
+        }
     }
 }
