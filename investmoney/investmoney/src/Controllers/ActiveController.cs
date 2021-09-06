@@ -22,6 +22,33 @@ namespace investmoney.src.Controllers
             else return 0;
         }
 
+        public List<String> GetActivesNames()
+        {
+            ActiveDao active = new ActiveDao();
+            List<String> list = active.GetActivesNames();
+            return list;
+        }
+
+        public int GetActiveAmountByTickerId(string ticker)
+        {
+            ActiveDao active = new ActiveDao();
+            int amount = active.GetActiveAmountByTickerId(ticker);
+            return amount;
+        }
+
+        public double GetActivePriceByTickerId(string ticker)
+        {
+            ActiveDao active = new ActiveDao();
+            double amount = active.GetActivePriceByTickerId(ticker);
+            return amount;
+        }
+
+        public ActiveModel GetActiveByTicker(string ticker)
+        {
+            ActiveDao dao = new ActiveDao();
+            return dao.GetActiveByTicker(ticker);
+        }
+
         public List<ActiveModel> GetActiveList()
         {
             ActiveDao activeDao = new ActiveDao();

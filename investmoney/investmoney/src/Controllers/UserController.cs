@@ -10,11 +10,10 @@ namespace investmoney.src.Controllers
     class UserController
     {
 
-        public string  create(String nome,String email,String password, int type, String balance)
+        public string  create(String nome,String email,String password, int type)
         {
-            int balanceParse = Convert.ToInt32(balance);
             UserDao userDao = new UserDao();
-            var result = userDao.Register(nome, email, password, type, balanceParse);
+            var result = userDao.Register(nome, email, password, type);
 
             if (result == 1) return nome;
             else return "false";

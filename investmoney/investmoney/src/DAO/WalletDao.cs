@@ -18,7 +18,7 @@ namespace investmoney.src.DAO
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
                 //  id, amount, price, user_id, ticker, description
-                string query = "select wallet.id, wallet.amount as amount, active.price as unity, active.ticker as ticker, active.description as description from wallet" +
+                string query = "select wallet.amount, wallet.boughtdate, wallet.boughtvalue, active.ticker as ticker, active.price as unity, active.description as description from wallet" +
                     " inner join user on wallet.user_id = " + userId +
                     " inner join active on wallet.actives_ticker = active.ticker;";
                 var output = connection.Query<Wallet>(query, new DynamicParameters());
@@ -55,7 +55,9 @@ namespace investmoney.src.DAO
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                string query = "UPDATE wallet SET amount = ((SELECT amount FROM wallet INNER JOIN user ON user.id = wallet.user_id WHERE user.id = "+userId+" AND wallet.actives_ticker = '"+ticker+"') - "+amount+")";
+                string query = "UPDATE wallet SET amount = ((SELECT amount FROM wallet INNER JOIN" +
+                    " user ON user.id = wallet.user_id WHERE user.id = "+userId+" AND wallet.actives_ticker = '"+ticker+"') - "+amount+") " +
+                    " where wallet.actives_ticker = '"+ticker+"'";
                 var result = Convert.ToInt32(connection.ExecuteScalar(query));
                 if (result != 0)
                 {

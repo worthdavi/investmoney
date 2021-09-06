@@ -33,8 +33,6 @@ namespace investmoney.src.Views
             this.dataTableActives = new System.Windows.Forms.DataGridView();
             this.btnBuyActives = new System.Windows.Forms.Button();
             this.btnSellActives = new System.Windows.Forms.Button();
-            this.lblAccountBalance = new System.Windows.Forms.Label();
-            this.lblActivesBalance = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMenuName = new System.Windows.Forms.Label();
             this.lblHistory = new System.Windows.Forms.Label();
@@ -88,24 +86,6 @@ namespace investmoney.src.Views
             this.btnSellActives.Text = "SELL";
             this.btnSellActives.UseVisualStyleBackColor = true;
             this.btnSellActives.Click += new System.EventHandler(this.btnSellActives_Click);
-            // 
-            // lblAccountBalance
-            // 
-            this.lblAccountBalance.AutoSize = true;
-            this.lblAccountBalance.Location = new System.Drawing.Point(9, 91);
-            this.lblAccountBalance.Name = "lblAccountBalance";
-            this.lblAccountBalance.Size = new System.Drawing.Size(118, 13);
-            this.lblAccountBalance.TabIndex = 6;
-            this.lblAccountBalance.Text = "Account Balance Label";
-            // 
-            // lblActivesBalance
-            // 
-            this.lblActivesBalance.AutoSize = true;
-            this.lblActivesBalance.Location = new System.Drawing.Point(9, 356);
-            this.lblActivesBalance.Name = "lblActivesBalance";
-            this.lblActivesBalance.Size = new System.Drawing.Size(129, 13);
-            this.lblActivesBalance.TabIndex = 7;
-            this.lblActivesBalance.Text = "Your actives balance is: ?";
             // 
             // panel1
             // 
@@ -168,8 +148,6 @@ namespace investmoney.src.Views
             this.Controls.Add(this.lblHistory);
             this.Controls.Add(this.btnPainelAdministrativo);
             this.Controls.Add(this.pnlLogoHome);
-            this.Controls.Add(this.lblActivesBalance);
-            this.Controls.Add(this.lblAccountBalance);
             this.Controls.Add(this.dataTableActives);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -190,8 +168,6 @@ namespace investmoney.src.Views
         private System.Windows.Forms.DataGridView dataTableActives;
         private System.Windows.Forms.Button btnBuyActives;
         private System.Windows.Forms.Button btnSellActives;
-        private System.Windows.Forms.Label lblAccountBalance;
-        private System.Windows.Forms.Label lblActivesBalance;
         private System.Windows.Forms.Panel pnlLogoHome;
         private System.Windows.Forms.Button btnPainelAdministrativo;
         private System.Windows.Forms.Panel panel1;

@@ -15,6 +15,7 @@ namespace investmoney
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+       
         static void Main()
         {
             LoginInfo.UserId = 0;

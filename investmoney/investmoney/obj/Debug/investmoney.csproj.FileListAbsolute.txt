@@ -44,6 +44,6 @@ C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\System.
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.csproj.CopyComplete
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Admin.Users.RegisterUser.resources
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Advertise.Sell.resources
-C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Advertise.Buy.resources
-C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\data.db
 C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.csproj.AssemblyReference.cache
+C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\obj\Debug\investmoney.src.Views.Advertise.Buy_new.resources
+C:\Users\worthdavi\Desktop\investmoney\investmoney\investmoney\bin\Debug\data.db

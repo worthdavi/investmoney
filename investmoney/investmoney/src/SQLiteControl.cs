@@ -26,8 +26,8 @@ namespace investmoney
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                return connection.Execute("insert into user (username, email, password, type, balance) values ('" +
-                    "" + user.Username + "', '" + user.Email + "', '" + user.Password + "', '" + user.Type + "', '" + user.Balance + "')");
+                return connection.Execute("insert into user (username, email, password, type) values ('" +
+                    "" + user.Username + "', '" + user.Email + "', '" + user.Password + "', '" + user.Type + "')");
                 // Console.WriteLine(" aqui {0}", cul);
             }
         }
@@ -87,7 +87,6 @@ namespace investmoney
                         userInfo.Email = sqReader.GetString(2);
                         userInfo.Password = sqReader.GetString(3);
                         userInfo.Type = sqReader.GetInt32(4);
-                        userInfo.Balance = sqReader.GetInt32(5);
                     }
                 }
                 finally

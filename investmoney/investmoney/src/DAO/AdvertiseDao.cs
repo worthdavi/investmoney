@@ -31,30 +31,17 @@ namespace investmoney.src.DAO
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = connection.Query<AdvertiseModel>("select id, amount, price, ticker from advertise where type = 0", new DynamicParameters());
+                var output = connection.Query<AdvertiseModel>("select ticker, price, description from active", new DynamicParameters());
                 return output.ToList();
             }
         }
 
-        public void AcceptOffer(AdvertiseModel offer, User user, int amountBought, int totalValue, bool newTicker)
+        public void AcceptOffer(ActiveModel active, int amount, User user, int amountBought, double totalValue, long timeStamp)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                if (newTicker)
-                {
-                    Console.WriteLine("Primeiro ativo desse tipo pro usuario");
-                    connection.Execute("insert into wallet (amount, user_id, actives_ticker) values ('" +
-                     "" + offer.amount + "', '" + user.getId() + "', '" + offer.ticker + "')");
-                }
-                else if(!newTicker)
-                {
-                    connection.Execute("update wallet set amount = ((select amount from wallet where actives_ticker = '" +
-                        "" + offer.ticker + "' and user_id = " + user.getId() + ") + " + amountBought + ");");
-                }
-                
-                connection.Execute("update advertise set amount = ((select amount from advertise where id = " + offer.id + ") - " + amountBought + ") where id = " + offer.id + "");
-                connection.Execute("delete from advertise where amount = 0 and id = " + offer.id);
-                connection.Execute("update user set balance = " + user.Balance + " where id = " + user.getId());
+                connection.Execute("insert into wallet (amount, user_id, boughtdate, boughtvalue, actives_ticker) values ('" +
+                    "" + amount + "', '" + user.getId() + "', '" + timeStamp + "', '" + active.price + "', '" + active.ticker + "')");
             }
         }
 

@@ -8,7 +8,7 @@ namespace investmoney
 {
     public class User
     {
-        // Format: id, username, email, password, type, balance
+        // Format: id, username, email, password, type,
         private int id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
@@ -19,11 +19,6 @@ namespace investmoney
         public int getId()
         {
             return this.id;
-        }
-
-        public void setBalance(double value)
-        {
-            this.Balance = value;
         }
 
         internal void setId(int v)

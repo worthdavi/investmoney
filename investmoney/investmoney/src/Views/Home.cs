@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,16 @@ namespace investmoney.src.Views
         {
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
             this.Text = String.Format(this.Text, LoginInfo.GlobalUser.Username);
-            double accountBalance = Convert.ToInt32(LoginInfo.GlobalUser.Balance);
-            this.lblAccountBalance.Text = String.Format("Your account balance is: {0:C}", accountBalance);
             WalletController walletController = new WalletController();
             dataTableActives.DataSource = walletController.LoadUserWallet(LoginInfo.UserId);
-            dataTableActives.Columns["boughtBy"].HeaderText = "Bought value";
-            dataTableActives.Columns["worthBy"].HeaderText = "Sale value";
-            dataTableActives.Columns["ticker"].HeaderText = "Ticker ID";
-            dataTableActives.Columns["amount"].HeaderText = "Amount";
-            dataTableActives.Columns["unity"].HeaderText = "Unity";
-            dataTableActives.Columns["description"].HeaderText = "Description";
+            for (int i = 0; i < dataTableActives.Rows.Count; i++)
+            {
+                long timestamp = Convert.ToInt64(dataTableActives.Rows[i].Cells["boughtdate"].Value.ToString());
+                var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(timestamp / 1000d)).ToLocalTime();
+                string dT = @"dd/MM/yyyy, hh/mm/ss";
+                //Convert.ToDateTime(dataTableActives.Rows[i].Cells["boughtdate"].Value.ToString());
+                //dataTableActives.Rows[i].Cells["boughtdate"].Value = dateTime.ToString(dT);
+            }
             dataTableActives.Columns["unity"].DefaultCellStyle.Format = "C";
             if (LoginInfo.GlobalUser.Type == 1)
             {
@@ -37,7 +38,14 @@ namespace investmoney.src.Views
                 btnPainelAdministrativo.Enabled = true;
             }
         }
-       
+        public static DateTime UnixTimeStampToDateTime(float unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Local);
+            dateTime = dateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dateTime;
+        }
+
         public Home()
         {
             InitializeComponent();
@@ -59,7 +67,7 @@ namespace investmoney.src.Views
 
         private void btnBuyActives_Click(object sender, EventArgs e)
         {
-            Buy buyScreen = new Buy(this);
+            Buy_new buyScreen = new Buy_new(this);
             buyScreen.Show();
         }
 

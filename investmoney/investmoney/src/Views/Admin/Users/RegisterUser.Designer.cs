@@ -30,16 +30,13 @@ namespace investmoney.src.Views.Admin.Users
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBalance = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cBoxType = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblBalanceError = new System.Windows.Forms.Label();
             this.lblPasswordError = new System.Windows.Forms.Label();
             this.lblEmailError = new System.Windows.Forms.Label();
             this.lblUsernameError = new System.Windows.Forms.Label();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -56,16 +53,13 @@ namespace investmoney.src.Views.Admin.Users
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtBalance);
             this.panel3.Controls.Add(this.txtUsername);
             this.panel3.Controls.Add(this.txtPassword);
             this.panel3.Controls.Add(this.cBoxType);
             this.panel3.Controls.Add(this.txtEmail);
-            this.panel3.Controls.Add(this.lblBalanceError);
             this.panel3.Controls.Add(this.lblPasswordError);
             this.panel3.Controls.Add(this.lblEmailError);
             this.panel3.Controls.Add(this.lblUsernameError);
-            this.panel3.Controls.Add(this.lblBalance);
             this.panel3.Controls.Add(this.btnHome);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnConfirm);
@@ -80,16 +74,6 @@ namespace investmoney.src.Views.Admin.Users
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 430);
             this.panel3.TabIndex = 2;
-            // 
-            // txtBalance
-            // 
-            this.txtBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.txtBalance.Location = new System.Drawing.Point(91, 242);
-            this.txtBalance.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(143, 20);
-            this.txtBalance.TabIndex = 4;
-            this.txtBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRegister_KeyPress);
             // 
             // txtUsername
             // 
@@ -133,19 +117,6 @@ namespace investmoney.src.Views.Admin.Users
             this.txtEmail.Size = new System.Drawing.Size(143, 20);
             this.txtEmail.TabIndex = 1;
             // 
-            // lblBalanceError
-            // 
-            this.lblBalanceError.AutoSize = true;
-            this.lblBalanceError.BackColor = System.Drawing.Color.Transparent;
-            this.lblBalanceError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalanceError.ForeColor = System.Drawing.Color.Red;
-            this.lblBalanceError.Location = new System.Drawing.Point(64, 262);
-            this.lblBalanceError.Name = "lblBalanceError";
-            this.lblBalanceError.Size = new System.Drawing.Size(11, 13);
-            this.lblBalanceError.TabIndex = 19;
-            this.lblBalanceError.Text = "*";
-            this.lblBalanceError.Visible = false;
-            // 
             // lblPasswordError
             // 
             this.lblPasswordError.AutoSize = true;
@@ -184,17 +155,6 @@ namespace investmoney.src.Views.Admin.Users
             this.lblUsernameError.TabIndex = 16;
             this.lblUsernameError.Text = "*";
             this.lblUsernameError.Visible = false;
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(17, 246);
-            this.lblBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(61, 16);
-            this.lblBalance.TabIndex = 14;
-            this.lblBalance.Text = "Balance:";
             // 
             // btnHome
             // 
@@ -343,10 +303,7 @@ namespace investmoney.src.Views.Admin.Users
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel btnHome;
-        private System.Windows.Forms.TextBox txtBalance;
-        private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label lblUsernameError;
-        private System.Windows.Forms.Label lblBalanceError;
         private System.Windows.Forms.Label lblPasswordError;
         private System.Windows.Forms.Label lblEmailError;
     }

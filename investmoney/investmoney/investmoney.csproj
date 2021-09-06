@@ -123,11 +123,11 @@
     <Compile Include="src\Views\Admin\Users\SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Views\Advertise\Buy.cs">
+    <Compile Include="src\Views\Advertise\Buy_new.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Views\Advertise\Buy.Designer.cs">
-      <DependentUpon>Buy.cs</DependentUpon>
+    <Compile Include="src\Views\Advertise\Buy_new.Designer.cs">
+      <DependentUpon>Buy_new.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Views\Advertise\Sell.cs">
       <SubType>Form</SubType>
@@ -178,12 +178,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Users\RegisterUser.resx">
       <DependentUpon>RegisterUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Admin\Users\SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Views\Advertise\Buy.resx">
-      <DependentUpon>Buy.cs</DependentUpon>
+    <EmbeddedResource Include="src\Views\Advertise\Buy_new.resx">
+      <DependentUpon>Buy_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Advertise\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>

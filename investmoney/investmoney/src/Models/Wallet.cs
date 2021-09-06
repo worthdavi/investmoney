@@ -13,13 +13,25 @@ namespace investmoney.src.Models
         // Format: id, amount, price, user_id, ticker_id, description
         private int id { get; set; }
         public string ticker { get; set; }
+
         public int amount { get; set; }
         public double unity { get; set; }
         private int user_id { get; set; }
         public string description { get; set; }
 
-        public double boughtBy { get; set; }
-        public double worthBy { get; set; }
+        public long boughtDate { get; set; }
+        public double boughtValue { get; set; }
+       
+
+        public int getUserId()
+        {
+            return this.user_id;
+        }
+
+        public int getId()
+        {
+            return this.id;
+        }
         
     }
 }

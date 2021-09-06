@@ -14,14 +14,13 @@ namespace investmoney.src.DAO
     {
 
 
-        public int Register(String nome, String email, String password, int tipo, int balance)
+        public int Register(String nome, String email, String password, int tipo)
         {
             User UserToSave = new User();
             UserToSave.Username = nome;
             UserToSave.Email = email;
             UserToSave.Password = password;
             UserToSave.Type = Convert.ToInt32(tipo);
-            UserToSave.Balance = Convert.ToInt32(balance);
             return SQLiteControl.SaveUser(UserToSave);
         }
 

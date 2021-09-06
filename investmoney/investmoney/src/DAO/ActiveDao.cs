@@ -8,6 +8,7 @@ using System.Data;
 using System.Configuration;
 using Dapper;
 using investmoney.src.Models;
+using System.Data.Common;
 
 namespace investmoney.src.DAO
 {
@@ -20,6 +21,65 @@ namespace investmoney.src.DAO
                 return connection.Execute("insert into active (ticker, amount, price, description) values ('" +
                     "" + ticker + "', '" + amount + "', '" + price + "', '" + description + "')");
                 // Console.WriteLine(" aqui {0}", cul);
+            }
+        }
+
+        public List<String> GetActivesNames()
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                //  id, amount, price, user_id, ticker, description
+                string query = "select ticker from active";
+                var output = connection.Query<String>(query, new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public int GetActiveAmountByTickerId(string ticker)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select amount from active where ticker = '" + ticker + "'";
+                var amount = Convert.ToInt32(connection.ExecuteScalar(query));
+                if (amount != 0)
+                {
+                    return amount;
+                }
+                return 0;
+            }
+        }
+
+        public double GetActivePriceByTickerId(string ticker)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select price from active where ticker = '" + ticker + "'";
+                var amount = Convert.ToDouble(connection.ExecuteScalar(query));
+                if (amount != 0)
+                {
+                    return amount;
+                }
+                return 0;
+            }
+        }
+
+        public ActiveModel GetActiveByTicker(string ticker)
+        {
+            ActiveModel active = new ActiveModel();
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                string query = "select * from active where ticker = '" + ticker + "'";
+                connection.Open();
+                DbCommand command = (DbCommand)connection.CreateCommand();
+                command.CommandText = query;
+                command.CommandType = CommandType.Text;
+                DbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    active.ticker = Convert.ToString(reader["ticker"]);
+                    active.price = Convert.ToInt32(reader["price"]);
+                    active.description = Convert.ToString(reader["description"]);
+                }
+                return active;
             }
         }
 

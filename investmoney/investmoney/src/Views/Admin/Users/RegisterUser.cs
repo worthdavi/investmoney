@@ -31,7 +31,6 @@ namespace investmoney.src.Views.Admin.Users
         private List<Label> GetLabelList()
         {
             List<Label> Labels = new List<Label>();
-            Labels.Add(this.lblBalanceError);
             Labels.Add(this.lblEmailError);
             Labels.Add(this.lblPasswordError);
             Labels.Add(this.lblUsernameError);
@@ -44,7 +43,6 @@ namespace investmoney.src.Views.Admin.Users
             Boxes.Add(this.txtUsername);
             Boxes.Add(this.txtEmail);
             Boxes.Add(this.txtPassword);
-            Boxes.Add(this.txtBalance);
             return Boxes;
         }
 
@@ -99,18 +97,11 @@ namespace investmoney.src.Views.Admin.Users
                 lblEmailError.Text = "E-mail is already in use.";
             }
 
-            if (Convert.ToInt32(txtBalance.Text) <= 0)
-            {
-                alright = false;
-                lblBalanceError.Visible = true;
-                lblBalanceError.Text = "Balance value must be higher than 0.";
-            }
-
             if (!alright)
             {
                 return;
             }
-            String user = userController.create(txtUsername.Text, txtEmail.Text, txtPassword.Text, cBoxType.SelectedIndex, txtBalance.Text);
+            String user = userController.create(txtUsername.Text, txtEmail.Text, txtPassword.Text, cBoxType.SelectedIndex);
             if (user == txtUsername.Text)
             {
                 MessageBox.Show("You succesfully created the user " + user.ToUpper());

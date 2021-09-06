@@ -28,18 +28,10 @@ namespace investmoney.src.Controllers
             return dao.LoadOffers();
         }
 
-        public void AcceptOffer(AdvertiseModel offer, User user, int amountBought, int totalValue)
+        public void AcceptOffer(ActiveModel active, int amount, User user, int amountBought, double totalValue, long timeStamp)
         {
             AdvertiseDao dao = new AdvertiseDao();
-            WalletController wallet = new WalletController();
-            bool newTicker = false;
-            user.setBalance(user.Balance - totalValue);
-            if (wallet.GetActivesAmountByTickerId(user.getId(), offer.ticker) == 0)
-            {
-                newTicker = true;
-            }
-
-            dao.AcceptOffer(offer, user, amountBought, totalValue, newTicker);
+            dao.AcceptOffer(active, amount, user, amountBought, totalValue, timeStamp);
         }
 
         public AdvertiseModel GetOfferById(int id)
