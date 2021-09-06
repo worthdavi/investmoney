@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using investmoney.src.Controllers;
 using investmoney.src.DAO;
 using investmoney.src.Views.Admin;
+using investmoney.src.Views.Advertise;
 
 namespace investmoney.src.Views
 {
@@ -52,8 +53,14 @@ namespace investmoney.src.Views
 
         private void btnSellActives_Click(object sender, EventArgs e)
         {
-            Advertise.Sell sellScreen = new Advertise.Sell(this);
+            Sell sellScreen = new Sell(this);
             sellScreen.Show();
+        }
+
+        private void btnBuyActives_Click(object sender, EventArgs e)
+        {
+            Buy buyScreen = new Buy(this);
+            buyScreen.Show();
         }
 
         private void Home_Activated(object sender, EventArgs e)

@@ -23,9 +23,8 @@ namespace investmoney.src.Views.Admin.ativos
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Admin admin = new Admin();
-            admin.Show();
-            this.Hide();
+            previousScreen.Enabled = true;
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

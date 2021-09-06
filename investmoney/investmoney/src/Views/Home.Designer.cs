@@ -77,6 +77,7 @@ namespace investmoney.src.Views
             this.btnBuyActives.TabIndex = 3;
             this.btnBuyActives.Text = "BUY";
             this.btnBuyActives.UseVisualStyleBackColor = true;
+            this.btnBuyActives.Click += new System.EventHandler(this.btnBuyActives_Click);
             // 
             // btnSellActives
             // 

@@ -33,7 +33,6 @@ namespace investmoney.src.DAO
                 //  id, amount, price, user_id, ticker, description
                 string query = "select wallet.actives_ticker as ticker from wallet inner join user on user.id = wallet.user_id where user.id = " + userId;
                 var output = connection.Query<String>(query, new DynamicParameters());
-                Console.WriteLine(output);
                 return output.ToList();
             }
         }

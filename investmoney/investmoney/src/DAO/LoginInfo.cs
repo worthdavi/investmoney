@@ -10,5 +10,6 @@ namespace investmoney.src.DAO
     {      
         public static int UserId;
         public static User GlobalUser = new User();
+
     }
 }

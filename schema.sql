@@ -15,6 +15,7 @@ CREATE TABLE `advertise` (
   `amount` INT NULL,
   `price` INT NULL,
   `type` TINYINT(6) NULL,
+  `ticker` VARCHAR(6) NOT NULL,
   `wallet_id` INT NOT NULL,
   CONSTRAINT `fk_advertise_wallet1`
     FOREIGN KEY (`wallet_id`)

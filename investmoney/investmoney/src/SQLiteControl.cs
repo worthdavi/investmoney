@@ -37,11 +37,10 @@ namespace investmoney
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                return connection.Execute("insert into advertise (amount, price, type, wallet_id) values ('" +
-                    "" + offer.amount + "', '" + offer.price + "', '" + offer.type + "', '" + offer.wallet_id + "')");
+                return connection.Execute("insert into advertise (amount, price, type, wallet_id, ticker) values ('" +
+                    "" + offer.amount + "', '" + offer.price + "', '" + offer.getType() + "', '" + offer.getWalletId() + "', '" + offer.ticker + "')");
             }
         }
-
 
         public static bool IsUsernameRepeated(string name)
         {
@@ -83,6 +82,7 @@ namespace investmoney
                 {
                     while (sqReader.Read())
                     {
+                        userInfo.setId(sqReader.GetInt32(0));
                         userInfo.Username = sqReader.GetString(1); 
                         userInfo.Email = sqReader.GetString(2);
                         userInfo.Password = sqReader.GetString(3);

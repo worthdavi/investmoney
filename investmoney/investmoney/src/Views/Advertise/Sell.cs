@@ -125,7 +125,7 @@ namespace investmoney.src.Views.Advertise
                 return;
             }
             AdvertiseController controller = new AdvertiseController();
-            controller.CreateOffer(amount, price, 0, wallet_id);
+            controller.CreateOffer(amount, price, 0, wallet_id, cBoxActives.Text);
             walletController.SetActivesAmountByTickerId(LoginInfo.UserId, cBoxActives.Text, amount);
             MessageBox.Show("You succesfully created an offer. Details:\n" +
                 "You are now selling " + amount + " of " + cBoxActives.Text + " actives for R$" + price + ",00 each! :)");
