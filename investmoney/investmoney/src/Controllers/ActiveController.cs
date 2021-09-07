@@ -8,8 +8,19 @@ using investmoney.src.Models;
 
 namespace investmoney.src.Controllers
 {
+    /// <summary>
+    /// A classe **ActiveController** é uma classe de controler, responsável por abragnder todas a ações referente a Active.
+    /// </summary>
     class ActiveController
     {
+        /// <summary>
+        /// O metodo que faz registo de active.
+        /// </summary>
+        /// <param name="nome">O nome do active a ser registado</param>
+        /// <param name="quantidade">A quantidade do active que deseja colocar para vender.</param>
+        /// <param name="preco">A preço do active que está cadastrando.</param>
+        /// <param name="descricao">Defina uma descrição do activo que está registrando.</param>
+        /// <returns>Retorna 1 se o registo do active for realizado com sucesso ou 2 se caso ocorra um erra na operação.</returns>
         public int Register(String nome, String quantidade, String preco, String descricao)
         {
             int quantidadeParse = Convert.ToInt32(quantidade);
@@ -22,6 +33,10 @@ namespace investmoney.src.Controllers
             else return 0;
         }
 
+        /// <summary>
+        /// O metodo lista os nome de todos os Active registrado.
+        /// </summary>
+        /// <returns>Retorna todos os Active registrado.</returns>
         public List<String> GetActivesNames()
         {
             ActiveDao active = new ActiveDao();
@@ -29,6 +44,11 @@ namespace investmoney.src.Controllers
             return list;
         }
 
+        /// <summary>
+        /// O metodo retona a quantidade de um Active.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna a quantidade de um Active a parti de um ticker especifico</returns>
         public int GetActiveAmountByTickerId(string ticker)
         {
             ActiveDao active = new ActiveDao();
@@ -36,6 +56,11 @@ namespace investmoney.src.Controllers
             return amount;
         }
 
+        /// <summary>
+        /// O metodo retorna o preço de um Active.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna o preço de um Active a partir de um ticker especifico</returns>
         public double GetActivePriceByTickerId(string ticker)
         {
             ActiveDao active = new ActiveDao();
@@ -43,12 +68,21 @@ namespace investmoney.src.Controllers
             return amount;
         }
 
+        /// <summary>
+        /// O metodo retorna um Active especifico.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna um Active especifico a partir de ticker.</returns>
         public ActiveModel GetActiveByTicker(string ticker)
         {
             ActiveDao dao = new ActiveDao();
             return dao.GetActiveByTicker(ticker);
         }
 
+        /// <summary>
+        /// O metodo lista todos os active.
+        /// </summary>
+        /// <returns>Retorna uma lista actives baseada no modelo de Active.</returns>
         public List<ActiveModel> GetActiveList()
         {
             ActiveDao activeDao = new ActiveDao();

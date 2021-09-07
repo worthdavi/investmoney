@@ -13,9 +13,20 @@ using System.Threading.Tasks;
 
 namespace investmoney.src.DAO
 {
-
+    /// <summary>
+    /// A classe **AdvertiseDao** é uma classe DAO, responsável por abragnder todas a ações referente a Advertise que interage com o banco de dados.
+    /// </summary>
     class AdvertiseDao
     {
+        /// <summary>
+        /// O metodo que faz registo de Advertise no banco de dados.
+        /// </summary>
+        /// <param name="amount">O quantidade que deseja comprar ou vender</param>
+        /// <param name="price">O preço  a que deseja comprar ou vender</param>
+        /// <param name="type">O tipo de operação: compar ou vender</param>
+        /// <param name="wallet_id">A carteira do usuário.</param>
+        /// <param name="ticker">O active  que deseja comprar ou vender.</param>
+        /// <returns>Retorna 1 se a operaçãofor realizado com sucesso ou 0 se caso ocorra um erra na operação.</returns>
         public int CreateOffer(int amount, int price, int type, int wallet_id, string ticker)
         {
             AdvertiseModel offer = new AdvertiseModel();
@@ -27,6 +38,10 @@ namespace investmoney.src.DAO
             return SQLiteControl.CreateOffer(offer);
         }
 
+        /// <summary>
+        /// O metodo retorna as Adverts.
+        /// </summary>
+        /// <returns>Retorna uma lista de ofertas.</returns>
         public List<AdvertiseModel> LoadOffers()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -36,6 +51,10 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo que aceita uma oferta.
+        /// </summary>
+        /// <returns>Não há retorno.</returns>
         public void AcceptOffer(ActiveModel active, int amount, User user, int amountBought, double totalValue, long timeStamp)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -45,6 +64,11 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O busca a oferta por id.
+        /// </summary>
+        /// <param name="id">A id que deseja buscar.</param>
+        /// <returns>Retorna uma oferta por id.</returns>
         public AdvertiseModel GetOfferById(int id)
         {
             AdvertiseModel model = new AdvertiseModel();
