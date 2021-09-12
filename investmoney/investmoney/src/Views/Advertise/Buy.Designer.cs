@@ -1,7 +1,7 @@
 ﻿
 namespace investmoney.src.Views.Advertise
 {
-    partial class Buy_new
+    partial class Buy
     {
         /// <summary>
         /// Required designer variable.
@@ -211,7 +211,7 @@ namespace investmoney.src.Views.Advertise
             this.txtPrice.Text = "PRECO TOTAL";
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Buy_new
+            // Buy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +219,7 @@ namespace investmoney.src.Views.Advertise
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnlLogo);
             this.Controls.Add(this.panel1);
-            this.Name = "Buy_new";
+            this.Name = "Buy";
             this.Text = "Sell";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

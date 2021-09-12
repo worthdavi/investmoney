@@ -33,12 +33,12 @@ namespace investmoney
         }
 
 
-        public static int CreateOffer(AdvertiseModel offer)
+        public static int SellActive(OfferModel offer, User user, DateTime date)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
-                return connection.Execute("insert into advertise (amount, price, type, wallet_id, ticker) values ('" +
-                    "" + offer.amount + "', '" + offer.price + "', '" + offer.getType() + "', '" + offer.getWalletId() + "', '" + offer.ticker + "')");
+                return connection.Execute("insert into transactions (ticker, amount, price, user_id , date) values ('" +
+                    "" + offer.ticker + "', '" + offer.amount + "', '" + user.getId() + "', '" + date + "')");
             }
         }
 

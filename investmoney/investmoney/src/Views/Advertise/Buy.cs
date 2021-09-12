@@ -13,14 +13,13 @@ using System.Windows.Forms;
 
 namespace investmoney.src.Views.Advertise
 {
-    public partial class Buy_new : Form
+    public partial class Buy : Form
     {
         public Home previousScreen = new Home();
-        WalletController walletController = new WalletController();
         ActiveController activeController = new ActiveController();
-        AdvertiseController advertiseController = new AdvertiseController();
+        OfferController offerController = new OfferController();
         public double result;
-        public Buy_new(Home previousScreen)
+        public Buy(Home previousScreen)
         {
             InitializeComponent();
             cBoxActives.Items.Add("None");
@@ -89,18 +88,14 @@ namespace investmoney.src.Views.Advertise
             }
             lblInfo.Text = String.Format("You are going to buy {0} {1} actions for R$ {2},00.", txtAmount.Text, cBoxActives.Text, txtPrice.Text);
         }
-        public String GetTimestamp(DateTime value)
-        {
-            return value.ToString("yyyyMMddHHmmssffff");
-        }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             ActiveModel active = new ActiveModel();
             active = activeController.GetActiveByTicker(cBoxActives.Text);
             int amount = Convert.ToInt32(txtAmount.Text);
-            long Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-            advertiseController.AcceptOffer(active, amount, LoginInfo.GlobalUser, amount, result, Timestamp);
+            DateTime localDate = DateTime.Now;
+            offerController.BuyActive(active, amount, LoginInfo.GlobalUser, false, localDate);
             MessageBox.Show("You succesfully bought some active. Details:\n" +
               "You just bought " + amount + " of " + cBoxActives.Text + " actives for R$" + active.price + ",00 each! :)");
             this.previousScreen.Enabled = true;

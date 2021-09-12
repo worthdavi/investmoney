@@ -1,5 +1,6 @@
 ﻿using investmoney.src.Controllers;
 using investmoney.src.DAO;
+using investmoney.src.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,15 +119,19 @@ namespace investmoney.src.Views.Advertise
         {
             int amount = Convert.ToInt32(txtAmount.Text);
             int price = Convert.ToInt32(txtPrice.Text);
-            int wallet_id = 1;
             if (amount > this.limitAmount)
             {
                 MessageBox.Show("You do not have enough actions. Your " + cBoxActives.Text + " actives amount is " + this.limitAmount);
                 return;
             }
-            AdvertiseController controller = new AdvertiseController();
-            controller.CreateOffer(amount, price, 0, wallet_id, cBoxActives.Text);
-            walletController.SetActivesAmountByTickerId(LoginInfo.UserId, cBoxActives.Text, amount);
+            OfferController controller = new OfferController();
+            
+            OfferModel offer = new OfferModel();
+            offer.amount = amount;
+            offer.price = price;
+            offer.ticker = cBoxActives.Text;
+            DateTime localDate = DateTime.Now;
+            controller.SellActive(offer, LoginInfo.GlobalUser, localDate);
             MessageBox.Show("You succesfully created an offer. Details:\n" +
                 "You are now selling " + amount + " of " + cBoxActives.Text + " actives for R$" + price + ",00 each! :)");
             this.previousScreen.Enabled = true;

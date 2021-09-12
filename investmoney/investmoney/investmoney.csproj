@@ -80,17 +80,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Controllers\ActiveController.cs" />
-    <Compile Include="src\Controllers\AdvertiseController.cs" />
+    <Compile Include="src\Controllers\OfferController.cs" />
+    <Compile Include="src\Controllers\TransactionController.cs" />
     <Compile Include="src\Controllers\UserController.cs" />
     <Compile Include="src\Controllers\WalletController.cs" />
     <Compile Include="src\DAO\ActiveDao.cs" />
-    <Compile Include="src\DAO\AdvertiseDao.cs" />
+    <Compile Include="src\DAO\OfferDao.cs" />
     <Compile Include="src\DAO\Auth.cs" />
     <Compile Include="src\DAO\LoginInfo.cs" />
+    <Compile Include="src\DAO\TransactionDao.cs" />
     <Compile Include="src\DAO\UserDao.cs" />
     <Compile Include="src\DAO\WalletDao.cs" />
     <Compile Include="src\Models\ActiveModel.cs" />
-    <Compile Include="src\Models\AdvertiseModel.cs" />
+    <Compile Include="src\Models\OfferModel.cs" />
+    <Compile Include="src\Models\TransactionModel.cs" />
     <Compile Include="src\Models\User.cs" />
     <Compile Include="src\Models\Wallet.cs" />
     <Compile Include="src\Views\Admin\Actives\SearchActive.cs">
@@ -123,11 +126,11 @@
     <Compile Include="src\Views\Admin\Users\SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Views\Advertise\Buy_new.cs">
+    <Compile Include="src\Views\Advertise\Buy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Views\Advertise\Buy_new.Designer.cs">
-      <DependentUpon>Buy_new.cs</DependentUpon>
+    <Compile Include="src\Views\Advertise\Buy.Designer.cs">
+      <DependentUpon>Buy.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Views\Advertise\Sell.cs">
       <SubType>Form</SubType>
@@ -138,7 +141,6 @@
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\DAO\teste.cs" />
-    <Compile Include="src\Models\teste.cs" />
     <Compile Include="src\SQLiteControl.cs" />
     <Compile Include="src\Views\Home.cs">
       <SubType>Form</SubType>
@@ -183,8 +185,8 @@
     <EmbeddedResource Include="src\Views\Admin\Users\SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Views\Advertise\Buy_new.resx">
-      <DependentUpon>Buy_new.cs</DependentUpon>
+    <EmbeddedResource Include="src\Views\Advertise\Buy.resx">
+      <DependentUpon>Buy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Views\Advertise\Sell.resx">
       <DependentUpon>Sell.cs</DependentUpon>
@@ -223,7 +225,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\buy-now-button-11549761436u0rxemvjsu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy-now-button-11549761436u0rxemvjsu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buynow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

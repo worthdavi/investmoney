@@ -22,16 +22,22 @@ namespace investmoney.src.Views
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
             this.Text = String.Format(this.Text, LoginInfo.GlobalUser.Username);
             WalletController walletController = new WalletController();
+            TransactionController transactionsController = new TransactionController();
             dataTableActives.DataSource = walletController.LoadUserWallet(LoginInfo.UserId);
-            for (int i = 0; i < dataTableActives.Rows.Count; i++)
-            {
-                long timestamp = Convert.ToInt64(dataTableActives.Rows[i].Cells["boughtdate"].Value.ToString());
-                var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(timestamp / 1000d)).ToLocalTime();
-                string dT = @"dd/MM/yyyy, hh/mm/ss";
-                //Convert.ToDateTime(dataTableActives.Rows[i].Cells["boughtdate"].Value.ToString());
-                //dataTableActives.Rows[i].Cells["boughtdate"].Value = dateTime.ToString(dT);
-            }
+            dataTableHistory.DataSource = transactionsController.LoadUserTransactions(LoginInfo.GlobalUser);
             dataTableActives.Columns["unity"].DefaultCellStyle.Format = "C";
+            dataTableHistory.Columns["price"].DefaultCellStyle.Format = "C";
+            for(int i = 0; i < dataTableHistory.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(dataTableHistory.Rows[i].Cells["price"].Value) < 0)
+                {
+                    dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.Red;
+                }
+                else
+                {
+                    dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.LightGreen;
+                }
+            }
             if (LoginInfo.GlobalUser.Type == 1)
             {
                 btnPainelAdministrativo.Visible = true;
@@ -67,7 +73,7 @@ namespace investmoney.src.Views
 
         private void btnBuyActives_Click(object sender, EventArgs e)
         {
-            Buy_new buyScreen = new Buy_new(this);
+            Buy buyScreen = new Buy(this);
             buyScreen.Show();
         }
 

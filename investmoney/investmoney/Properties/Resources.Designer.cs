@@ -73,6 +73,36 @@ namespace investmoney.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buy_now_button_11549761436u0rxemvjsu {
+            get {
+                object obj = ResourceManager.GetObject("buy-now-button-11549761436u0rxemvjsu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buy_now_button_11549761436u0rxemvjsu1 {
+            get {
+                object obj = ResourceManager.GetObject("buy-now-button-11549761436u0rxemvjsu1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buynow {
+            get {
+                object obj = ResourceManager.GetObject("buynow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Engrenagem_Bicolor_PNG {
             get {
                 object obj = ResourceManager.GetObject("Engrenagem-Bicolor-PNG", resourceCulture);

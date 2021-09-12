@@ -29,17 +29,18 @@ namespace investmoney.src.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataTableActives = new System.Windows.Forms.DataGridView();
-            this.btnBuyActives = new System.Windows.Forms.Button();
-            this.btnSellActives = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMenuName = new System.Windows.Forms.Label();
-            this.lblHistory = new System.Windows.Forms.Label();
             this.btnPainelAdministrativo = new System.Windows.Forms.Button();
             this.pnlLogoHome = new System.Windows.Forms.Panel();
+            this.btnBuyActives = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataTableHistory = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableActives)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTableActives
@@ -50,81 +51,29 @@ namespace investmoney.src.Views
             this.dataTableActives.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTableActives.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataTableActives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataTableActives.GridColor = System.Drawing.Color.White;
-            this.dataTableActives.Location = new System.Drawing.Point(12, 107);
+            this.dataTableActives.Location = new System.Drawing.Point(356, 4);
             this.dataTableActives.MultiSelect = false;
             this.dataTableActives.Name = "dataTableActives";
             this.dataTableActives.ReadOnly = true;
             this.dataTableActives.RowHeadersVisible = false;
-            this.dataTableActives.Size = new System.Drawing.Size(887, 246);
+            this.dataTableActives.Size = new System.Drawing.Size(359, 199);
             this.dataTableActives.TabIndex = 2;
-            // 
-            // btnBuyActives
-            // 
-            this.btnBuyActives.Location = new System.Drawing.Point(31, 58);
-            this.btnBuyActives.Name = "btnBuyActives";
-            this.btnBuyActives.Size = new System.Drawing.Size(62, 23);
-            this.btnBuyActives.TabIndex = 3;
-            this.btnBuyActives.Text = "BUY";
-            this.btnBuyActives.UseVisualStyleBackColor = true;
-            this.btnBuyActives.Click += new System.EventHandler(this.btnBuyActives_Click);
-            // 
-            // btnSellActives
-            // 
-            this.btnSellActives.Location = new System.Drawing.Point(109, 58);
-            this.btnSellActives.Name = "btnSellActives";
-            this.btnSellActives.Size = new System.Drawing.Size(62, 23);
-            this.btnSellActives.TabIndex = 4;
-            this.btnSellActives.Text = "SELL";
-            this.btnSellActives.UseVisualStyleBackColor = true;
-            this.btnSellActives.Click += new System.EventHandler(this.btnSellActives_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblMenuName);
-            this.panel1.Controls.Add(this.btnBuyActives);
-            this.panel1.Controls.Add(this.btnSellActives);
-            this.panel1.Location = new System.Drawing.Point(699, 356);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 93);
-            this.panel1.TabIndex = 10;
-            // 
-            // lblMenuName
-            // 
-            this.lblMenuName.AutoSize = true;
-            this.lblMenuName.Font = new System.Drawing.Font("Bebas Neue", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuName.Location = new System.Drawing.Point(32, 0);
-            this.lblMenuName.Name = "lblMenuName";
-            this.lblMenuName.Size = new System.Drawing.Size(139, 48);
-            this.lblMenuName.TabIndex = 11;
-            this.lblMenuName.Text = "ADVERTISE";
-            this.lblMenuName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHistory
-            // 
-            this.lblHistory.AutoSize = true;
-            this.lblHistory.ForeColor = System.Drawing.Color.Blue;
-            this.lblHistory.Location = new System.Drawing.Point(9, 425);
-            this.lblHistory.Name = "lblHistory";
-            this.lblHistory.Size = new System.Drawing.Size(202, 13);
-            this.lblHistory.TabIndex = 11;
-            this.lblHistory.Text = "Click here to see your transactions history";
             // 
             // btnPainelAdministrativo
             // 
             this.btnPainelAdministrativo.BackgroundImage = global::investmoney.Properties.Resources.Engrenagem_Bicolor_PNG;
             this.btnPainelAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPainelAdministrativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPainelAdministrativo.Location = new System.Drawing.Point(864, 4);
+            this.btnPainelAdministrativo.Location = new System.Drawing.Point(6, 359);
             this.btnPainelAdministrativo.Name = "btnPainelAdministrativo";
             this.btnPainelAdministrativo.Size = new System.Drawing.Size(35, 33);
             this.btnPainelAdministrativo.TabIndex = 9;
@@ -135,21 +84,110 @@ namespace investmoney.src.Views
             // 
             this.pnlLogoHome.BackgroundImage = global::investmoney.Properties.Resources.investmoney_brand;
             this.pnlLogoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlLogoHome.Location = new System.Drawing.Point(294, 4);
+            this.pnlLogoHome.Location = new System.Drawing.Point(6, 4);
             this.pnlLogoHome.Name = "pnlLogoHome";
-            this.pnlLogoHome.Size = new System.Drawing.Size(338, 100);
+            this.pnlLogoHome.Size = new System.Drawing.Size(344, 100);
             this.pnlLogoHome.TabIndex = 8;
+            // 
+            // btnBuyActives
+            // 
+            this.btnBuyActives.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuyActives.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuyActives.BackgroundImage = global::investmoney.Properties.Resources.buynow;
+            this.btnBuyActives.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuyActives.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuyActives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuyActives.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBuyActives.Location = new System.Drawing.Point(185, 359);
+            this.btnBuyActives.Name = "btnBuyActives";
+            this.btnBuyActives.Size = new System.Drawing.Size(165, 49);
+            this.btnBuyActives.TabIndex = 3;
+            this.btnBuyActives.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBuyActives.UseVisualStyleBackColor = false;
+            this.btnBuyActives.Click += new System.EventHandler(this.btnBuyActives_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(134, 411);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Or click here to sell your actions";
+            this.label1.Click += new System.EventHandler(this.btnSellActives_Click);
+            // 
+            // dataTableHistory
+            // 
+            this.dataTableHistory.AllowUserToAddRows = false;
+            this.dataTableHistory.AllowUserToDeleteRows = false;
+            this.dataTableHistory.AllowUserToResizeColumns = false;
+            this.dataTableHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataTableHistory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataTableHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataTableHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataTableHistory.GridColor = System.Drawing.Color.White;
+            this.dataTableHistory.ReadOnly = true;
+            this.dataTableHistory.RowHeadersVisible = false;
+            this.dataTableHistory.Location = new System.Drawing.Point(356, 224);
+            this.dataTableHistory.Name = "dataTableHistory";
+            this.dataTableHistory.Size = new System.Drawing.Size(359, 200);
+            this.dataTableHistory.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(499, 206);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "This is your wallet.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(462, 428);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "This is your transactions history.";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(6, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(344, 249);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Welcome to your homepage. Here you can see your actions balance and more!";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 450);
-            this.Controls.Add(this.lblHistory);
+            this.ClientSize = new System.Drawing.Size(724, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnBuyActives);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataTableHistory);
             this.Controls.Add(this.btnPainelAdministrativo);
             this.Controls.Add(this.pnlLogoHome);
             this.Controls.Add(this.dataTableActives);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Home";
@@ -157,8 +195,7 @@ namespace investmoney.src.Views
             this.Text = "Home - {0}";
             this.Activated += new System.EventHandler(this.Home_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataTableActives)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,12 +203,13 @@ namespace investmoney.src.Views
 
         #endregion
         private System.Windows.Forms.DataGridView dataTableActives;
-        private System.Windows.Forms.Button btnBuyActives;
-        private System.Windows.Forms.Button btnSellActives;
         private System.Windows.Forms.Panel pnlLogoHome;
         private System.Windows.Forms.Button btnPainelAdministrativo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMenuName;
-        private System.Windows.Forms.Label lblHistory;
+        private System.Windows.Forms.Button btnBuyActives;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataTableHistory;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

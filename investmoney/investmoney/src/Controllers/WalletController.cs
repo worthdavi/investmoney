@@ -30,11 +30,5 @@ namespace investmoney.src.Controllers
             int amount = wallet.GetActivesAmountByTickerId(userId, ticker);
             return amount;
         }
-
-        public int SetActivesAmountByTickerId(int userId, string ticker, int amount)
-        {
-            WalletDao wallet = new WalletDao();
-            return wallet.SetActivesAmountByTickerId(userId, ticker, amount); ;
-        }
     }
 }

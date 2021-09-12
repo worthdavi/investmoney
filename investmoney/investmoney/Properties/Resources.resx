@@ -124,10 +124,19 @@
   <data name="Engrenagem-Bicolor-PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Engrenagem-Bicolor-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow_go_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_go_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="investmoney-brand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\investmoney-brand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_go_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_go_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buy-now-button-11549761436u0rxemvjsu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buy-now-button-11549761436u0rxemvjsu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buy-now-button-11549761436u0rxemvjsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buy-now-button-11549761436u0rxemvjsu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buynow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buynow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
