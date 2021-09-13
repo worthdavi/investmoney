@@ -29,7 +29,7 @@ namespace investmoney.src.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataTableActives = new System.Windows.Forms.DataGridView();
             this.btnPainelAdministrativo = new System.Windows.Forms.Button();
             this.pnlLogoHome = new System.Windows.Forms.Panel();
@@ -51,21 +51,21 @@ namespace investmoney.src.Views
             this.dataTableActives.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTableActives.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataTableActives.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataTableActives.GridColor = System.Drawing.Color.White;
-            this.dataTableActives.Location = new System.Drawing.Point(356, 4);
+            this.dataTableActives.Location = new System.Drawing.Point(376, 4);
             this.dataTableActives.MultiSelect = false;
             this.dataTableActives.Name = "dataTableActives";
             this.dataTableActives.ReadOnly = true;
             this.dataTableActives.RowHeadersVisible = false;
-            this.dataTableActives.Size = new System.Drawing.Size(359, 199);
+            this.dataTableActives.Size = new System.Drawing.Size(569, 199);
             this.dataTableActives.TabIndex = 2;
             // 
             // btnPainelAdministrativo
@@ -125,27 +125,21 @@ namespace investmoney.src.Views
             this.dataTableHistory.AllowUserToResizeColumns = false;
             this.dataTableHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTableHistory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataTableHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataTableHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataTableHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataTableHistory.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataTableHistory.GridColor = System.Drawing.Color.White;
+            this.dataTableHistory.Location = new System.Drawing.Point(376, 222);
+            this.dataTableHistory.Name = "dataTableHistory";
             this.dataTableHistory.ReadOnly = true;
             this.dataTableHistory.RowHeadersVisible = false;
-            this.dataTableHistory.Location = new System.Drawing.Point(356, 224);
-            this.dataTableHistory.Name = "dataTableHistory";
-            this.dataTableHistory.Size = new System.Drawing.Size(359, 200);
+            this.dataTableHistory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataTableHistory.Size = new System.Drawing.Size(569, 200);
             this.dataTableHistory.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(499, 206);
+            this.label2.Location = new System.Drawing.Point(628, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 13;
@@ -154,7 +148,7 @@ namespace investmoney.src.Views
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(462, 428);
+            this.label3.Location = new System.Drawing.Point(593, 425);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 13);
             this.label3.TabIndex = 14;
@@ -178,7 +172,7 @@ namespace investmoney.src.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 450);
+            this.ClientSize = new System.Drawing.Size(957, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);

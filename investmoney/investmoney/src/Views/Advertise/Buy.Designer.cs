@@ -36,13 +36,12 @@ namespace investmoney.src.Views.Advertise
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLimit = new System.Windows.Forms.Label();
             this.cBoxActives = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Panel();
             this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +72,7 @@ namespace investmoney.src.Views.Advertise
             this.txtAmount.Location = new System.Drawing.Point(30, 82);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(159, 22);
-            this.txtAmount.TabIndex = 5;
+            this.txtAmount.TabIndex = 13;
             this.txtAmount.Visible = false;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             this.txtAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAmount_KeyUp);
@@ -118,7 +117,6 @@ namespace investmoney.src.Views.Advertise
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.btnConfirm);
-            this.panel1.Controls.Add(this.lblLimit);
             this.panel1.Controls.Add(this.cBoxActives);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnHome);
@@ -132,16 +130,6 @@ namespace investmoney.src.Views.Advertise
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(218, 434);
             this.panel1.TabIndex = 10;
-            // 
-            // lblLimit
-            // 
-            this.lblLimit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLimit.Font = new System.Drawing.Font("Goudy Old Style", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLimit.Location = new System.Drawing.Point(151, 103);
-            this.lblLimit.Name = "lblLimit";
-            this.lblLimit.Size = new System.Drawing.Size(38, 18);
-            this.lblLimit.TabIndex = 13;
-            this.lblLimit.Text = "/5000";
             // 
             // cBoxActives
             // 
@@ -164,6 +152,27 @@ namespace investmoney.src.Views.Advertise
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Cancel";
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackgroundImage = global::investmoney.Properties.Resources.arrow_go_back;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Location = new System.Drawing.Point(95, 388);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(38, 34);
+            this.btnHome.TabIndex = 10;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(30, 133);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(159, 21);
+            this.txtPrice.TabIndex = 14;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            this.txtPrice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrice_KeyUp);
             // 
             // label2
             // 
@@ -188,28 +197,6 @@ namespace investmoney.src.Views.Advertise
             this.pnlLogo.Name = "pnlLogo";
             this.pnlLogo.Size = new System.Drawing.Size(344, 130);
             this.pnlLogo.TabIndex = 0;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackgroundImage = global::investmoney.Properties.Resources.arrow_go_back;
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.Location = new System.Drawing.Point(95, 388);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(38, 34);
-            this.btnHome.TabIndex = 10;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(30, 133);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(159, 21);
-            this.txtPrice.TabIndex = 14;
-            this.txtPrice.Text = "PRECO TOTAL";
-            this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Buy
             // 
@@ -241,7 +228,6 @@ namespace investmoney.src.Views.Advertise
         private System.Windows.Forms.Panel btnHome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cBoxActives;
-        private System.Windows.Forms.Label lblLimit;
         private System.Windows.Forms.TextBox txtPrice;
     }
 }

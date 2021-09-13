@@ -107,6 +107,7 @@ namespace investmoney.src.Views.Admin.Users
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -160,6 +161,7 @@ namespace investmoney.src.Views.Admin.Users
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Search";
+            this.Load += new System.EventHandler(this.SearchUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UserTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSearch)).EndInit();
             this.ResumeLayout(false);

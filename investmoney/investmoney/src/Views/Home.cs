@@ -17,6 +17,15 @@ namespace investmoney.src.Views
 {
     public partial class Home : Form
     {
+        public DataGridViewColumn CreateColumn(string header, string name)
+        {
+            DataGridViewColumn newCol = new DataGridViewColumn();
+            DataGridViewCell cell = new DataGridViewTextBoxCell();
+            newCol.CellTemplate = cell;
+            newCol.HeaderText = header;
+            newCol.Name = name;
+            return newCol;
+        }
         public void reloadInfo()
         {
             LoginInfo.GlobalUser = SQLiteControl.LoadUserById(LoginInfo.UserId);
@@ -27,15 +36,25 @@ namespace investmoney.src.Views
             dataTableHistory.DataSource = transactionsController.LoadUserTransactions(LoginInfo.GlobalUser);
             dataTableActives.Columns["unity"].DefaultCellStyle.Format = "C";
             dataTableHistory.Columns["price"].DefaultCellStyle.Format = "C";
-            for(int i = 0; i < dataTableHistory.Rows.Count; i++)
+            //Creating the custom table "type"
+            DataGridViewColumn typeColumn = CreateColumn("type", "type");
+            //dataTableHistory.Columns.Add(typeColumn);
+            for (int i = 0; i < dataTableHistory.Rows.Count; i++)
             {
-                if (Convert.ToInt32(dataTableHistory.Rows[i].Cells["price"].Value) < 0)
+                double price = Convert.ToDouble(dataTableHistory.Rows[i].Cells["price"].Value);
+                int amount = Convert.ToInt32(dataTableHistory.Rows[i].Cells["amount"].Value);
+                dataTableHistory.Rows[i].Cells["totalcost"].Value = price * amount;
+                if (price < 0)
                 {
+                    //dataTableHistory.Rows[i].Cells["type"].Value = "C";
                     dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.Red;
+                    dataTableHistory.Rows[i].Cells["totalcost"].Style.BackColor = Color.Red;
                 }
                 else
                 {
+                    //dataTableHistory.Rows[i].Cells["type"].Value = "V";
                     dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.LightGreen;
+                    dataTableHistory.Rows[i].Cells["totalcost"].Style.BackColor = Color.LightGreen;
                 }
             }
             if (LoginInfo.GlobalUser.Type == 1)
@@ -43,13 +62,6 @@ namespace investmoney.src.Views
                 btnPainelAdministrativo.Visible = true;
                 btnPainelAdministrativo.Enabled = true;
             }
-        }
-        public static DateTime UnixTimeStampToDateTime(float unixTimeStamp)
-        {
-            // Unix timestamp is seconds past epoch
-            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Local);
-            dateTime = dateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dateTime;
         }
 
         public Home()

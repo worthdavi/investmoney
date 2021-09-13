@@ -17,14 +17,14 @@ namespace investmoney.src.Controllers
             return dao.LoadOffers();
         }
 
-        public void BuyActive(ActiveModel active, int amount, User user, bool isNew, DateTime localDate)
+        public void BuyActive(double price, int amount, User user, bool isNew, DateTime localDate, string ticker)
         {
             OfferDao dao = new OfferDao();
             WalletDao wdao = new WalletDao();
-            int currentAmount = wdao.GetActivesAmountByTickerId(user.getId(), active.ticker);
+            int currentAmount = wdao.GetActivesAmountByTickerId(user.getId(), ticker);
             if (currentAmount <= 0)
                 isNew = true;
-            dao.BuyActive(active, amount, user, isNew, localDate);
+            dao.BuyActive(price, amount, user, isNew, localDate, ticker);
         }
 
         // (OfferModel offer, User user, DateTime date)

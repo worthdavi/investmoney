@@ -25,23 +25,23 @@ namespace investmoney.src.DAO
             }
         }
 
-        public void BuyActive(ActiveModel active, int amount, User user, bool isNew, DateTime date)
+        public void BuyActive(double price, int amount, User user, bool isNew, DateTime date, string ticker)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
                 if (isNew)
                 {
                     connection.Execute("insert into wallet (amount, user_id, ticker) values ('" +
-                    "" + amount + "', '" + user.getId() + "', '" + active.ticker + "')");
+                    "" + amount + "', '" + user.getId() + "', '" + ticker + "')");
                 }
                 else
                 {
-                    connection.Execute("update wallet set amount = ((select amount from wallet where user_id = " + user.getId() + " and ticker = '" + active.ticker + "') + " + amount + ")" +
-                        "where user_id = " + user.getId() + " and ticker = '" + active.ticker + "';");
+                    connection.Execute("update wallet set amount = ((select amount from wallet where user_id = " + user.getId() + " and ticker = '" + ticker + "') + " + amount + ")" +
+                        "where user_id = " + user.getId() + " and ticker = '" + ticker + "';");
                 }
 
                 connection.Execute("insert into transactions (ticker, amount, price, user_id, date) values ('" +
-                    "" + active.ticker + "', '" + amount + "', '" + active.price + "', '" + user.getId() + "', '" + date.ToString("dd/MM/yyyy HH:mm") + "')");
+                    "" + ticker + "', '" + amount + "', '" + price + "', '" + user.getId() + "', '" + date.ToString("dd/MM/yyyy HH:mm") + "')");
             }
         }
 

@@ -52,7 +52,6 @@ namespace investmoney.src.Views.Advertise
                 lblPrice.Visible = false;
                 btnConfirm.Visible = false;
                 lblInfo.Visible = false;
-                lblLimit.Visible = false;
                 lblInfo.Text = "You are going to buy {0} {1} actions for R$ {2}.";
             }
 
@@ -71,22 +70,45 @@ namespace investmoney.src.Views.Advertise
             if (txtAmount.TextLength > 0)
             {
                 txtPrice.Visible = true;
-                double price = activeController.GetActivePriceByTickerId(cBoxActives.Text);
-                result = Convert.ToInt32(txtAmount.Text) * price;
-                txtPrice.Text = Convert.ToString(result);
                 lblPrice.Visible = true;
-                lblInfo.Visible = true;
-                btnConfirm.Visible = true;
             }
             else if (txtAmount.TextLength == 0 && txtPrice.Visible)
             {
                 txtPrice.Visible = false;
                 lblPrice.Visible = false;
-                btnConfirm.Visible = false;
                 lblInfo.Visible = false;
                 lblInfo.Text = "You are going to buy {0} {1} actions for R$ {2}.";
             }
             lblInfo.Text = String.Format("You are going to buy {0} {1} actions for R$ {2},00.", txtAmount.Text, cBoxActives.Text, txtPrice.Text);
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPrice.TextLength > 0)
+            {
+                if (!btnConfirm.Visible || !lblInfo.Visible)
+                {
+                    btnConfirm.Visible = true;
+                    lblInfo.Visible = true;
+                    double price = Convert.ToDouble(txtPrice.Text);
+                    result = Convert.ToInt32(txtAmount.Text) * price;
+                }
+            }
+            else if (txtPrice.TextLength == 0 && (lblInfo.Visible || btnConfirm.Visible))
+            {
+                btnConfirm.Visible = false;
+                lblInfo.Visible = false;
+                lblInfo.Text = "You are going to buy {0} {1} actions for R$ {2}.";
+            }
+            lblInfo.Text = String.Format("You are going to buy {0} {1} actions for R$ {2}.", txtAmount.Text, cBoxActives.Text, txtPrice.Text);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -94,10 +116,11 @@ namespace investmoney.src.Views.Advertise
             ActiveModel active = new ActiveModel();
             active = activeController.GetActiveByTicker(cBoxActives.Text);
             int amount = Convert.ToInt32(txtAmount.Text);
+            double price = Convert.ToInt32(txtPrice.Text);
             DateTime localDate = DateTime.Now;
-            offerController.BuyActive(active, amount, LoginInfo.GlobalUser, false, localDate);
+            offerController.BuyActive(price, amount, LoginInfo.GlobalUser, false, localDate, active.ticker);
             MessageBox.Show("You succesfully bought some active. Details:\n" +
-              "You just bought " + amount + " of " + cBoxActives.Text + " actives for R$" + active.price + ",00 each! :)");
+              "You just bought " + amount + " of " + cBoxActives.Text + " actives for R$" + price + ",00 each! :)");
             this.previousScreen.Enabled = true;
             this.Close();
         }

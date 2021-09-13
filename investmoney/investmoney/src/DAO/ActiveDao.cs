@@ -20,7 +20,15 @@ namespace investmoney.src.DAO
             {
                 return connection.Execute("insert into active (ticker, amount, price, description) values ('" +
                     "" + ticker + "', '" + amount + "', '" + price + "', '" + description + "')");
-                // Console.WriteLine(" aqui {0}", cul);
+            }
+        }
+
+        public static int SaveActive(ActiveModel active)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                return connection.Execute("update active set ticker = '" + active.ticker + "', amount = " + active.amount + ", price = " + active.price + "," +
+                    " description = '" + active.description + "' where ticker = '" + active.ticker + "';");
             }
         }
 

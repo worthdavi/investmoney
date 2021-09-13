@@ -22,6 +22,13 @@ namespace investmoney.src.Controllers
             else return 0;
         }
 
+        public int SaveActive(ActiveModel active)
+        {
+            int result = ActiveDao.SaveActive(active);
+            if (result == 1) return 1;
+            else return 0;
+        }
+
         public List<String> GetActivesNames()
         {
             ActiveDao active = new ActiveDao();

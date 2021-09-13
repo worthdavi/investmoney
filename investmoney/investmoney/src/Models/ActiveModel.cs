@@ -11,7 +11,7 @@ namespace investmoney.src.Models
         // Format: ticker, amount, price, description
         public string ticker { get; set; }
         public int amount { get; set; }
-        public int price { get; set; }
+        public decimal price { get; set; }
         public string description { get; set; }
     }
 }

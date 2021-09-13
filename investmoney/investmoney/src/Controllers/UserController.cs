@@ -19,6 +19,12 @@ namespace investmoney.src.Controllers
             else return "false";
 
         }
+        public int SaveUser(User user)
+        {
+            int result = UserDao.SaveUser(user);
+            if (result == 1) return 1;
+            else return 0;
+        }
         public List<User> GetAllUsers()
         {
             return UserDao.GetUserList();

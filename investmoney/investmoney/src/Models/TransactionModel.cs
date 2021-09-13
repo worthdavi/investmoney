@@ -16,6 +16,8 @@ namespace investmoney.src.Models
         private int user_id { get; set; }
         public string date { get; set; }
 
+        public double totalcost { get; set; }
+
         public int getUserId()
         {
             return this.user_id;

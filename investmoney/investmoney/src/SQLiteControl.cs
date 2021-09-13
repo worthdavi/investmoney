@@ -22,13 +22,12 @@ namespace investmoney
             }
         }
 
-        public static int SaveUser(User user)
+        public static int CreateUser(User user)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
             {
                 return connection.Execute("insert into user (username, email, password, type) values ('" +
                     "" + user.Username + "', '" + user.Email + "', '" + user.Password + "', '" + user.Type + "')");
-                // Console.WriteLine(" aqui {0}", cul);
             }
         }
 

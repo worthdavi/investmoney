@@ -21,7 +21,16 @@ namespace investmoney.src.DAO
             UserToSave.Email = email;
             UserToSave.Password = password;
             UserToSave.Type = Convert.ToInt32(tipo);
-            return SQLiteControl.SaveUser(UserToSave);
+            return SQLiteControl.CreateUser(UserToSave);
+        }
+
+        public static int SaveUser(User user)
+        {
+            using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
+            {
+                return connection.Execute("update user set username = '" + user.Username + "', email = '" + user.Email + "', password = '" + user.Password + "'," +
+                    " type = " + user.Type + " where id = " + user.getId() + ";");
+            }
         }
 
         public static List<User> GetUserList()
