@@ -119,6 +119,7 @@ namespace investmoney.src.Views.Advertise
             double price = Convert.ToInt32(txtPrice.Text);
             DateTime localDate = DateTime.Now;
             offerController.BuyActive(price, amount, LoginInfo.GlobalUser, false, localDate, active.ticker);
+
             MessageBox.Show("You succesfully bought some active. Details:\n" +
               "You just bought " + amount + " of " + cBoxActives.Text + " actives for R$" + price + ",00 each! :)");
             this.previousScreen.Enabled = true;

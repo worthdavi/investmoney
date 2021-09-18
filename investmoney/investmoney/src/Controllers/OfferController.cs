@@ -24,15 +24,22 @@ namespace investmoney.src.Controllers
             int currentAmount = wdao.GetActivesAmountByTickerId(user.getId(), ticker);
             if (currentAmount <= 0)
                 isNew = true;
-            dao.BuyActive(price, amount, user, isNew, localDate, ticker);
+            dao.BuyActive(price, amount, user, isNew, localDate, ticker, "C");
         }
 
         // (OfferModel offer, User user, DateTime date)
         public void SellActive(OfferModel offer, User user, DateTime date)
         {
             OfferDao dao = new OfferDao();
-            dao.SellActive(offer, user, date);
+            dao.SellActive(offer, user, date, "V");
         }
+        public List<TransactionModel> GetActiveSell()
+        {
+            OfferDao dao = new OfferDao();
+           return dao.GetActiveSell();
+        }
+
+
 
     }
 }

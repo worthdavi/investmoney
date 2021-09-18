@@ -37,8 +37,9 @@ namespace investmoney.src.Views
             dataTableActives.Columns["unity"].DefaultCellStyle.Format = "C";
             dataTableHistory.Columns["price"].DefaultCellStyle.Format = "C";
             //Creating the custom table "type"
-            DataGridViewColumn typeColumn = CreateColumn("type", "type");
+            //DataGridViewColumn typeColumn = CreateColumn("type", "type");
             //dataTableHistory.Columns.Add(typeColumn);
+            // transactionsController.calculateMaked();
             for (int i = 0; i < dataTableHistory.Rows.Count; i++)
             {
                 double price = Convert.ToDouble(dataTableHistory.Rows[i].Cells["price"].Value);
@@ -46,13 +47,13 @@ namespace investmoney.src.Views
                 dataTableHistory.Rows[i].Cells["totalcost"].Value = price * amount;
                 if (price < 0)
                 {
-                    //dataTableHistory.Rows[i].Cells["type"].Value = "C";
+                    // dataTableHistory.Rows[i].Cells["type"].Value = "C";
                     dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.Red;
                     dataTableHistory.Rows[i].Cells["totalcost"].Style.BackColor = Color.Red;
                 }
                 else
                 {
-                    //dataTableHistory.Rows[i].Cells["type"].Value = "V";
+                    // dataTableHistory.Rows[i].Cells["type"].Value = "V";
                     dataTableHistory.Rows[i].Cells["price"].Style.BackColor = Color.LightGreen;
                     dataTableHistory.Rows[i].Cells["totalcost"].Style.BackColor = Color.LightGreen;
                 }
@@ -75,6 +76,10 @@ namespace investmoney.src.Views
             Admin.Admin admin = new Admin.Admin();
             admin.Show();
             this.Hide();
+
+           // Advertise.Calculate admin = new Advertise.Calculate();
+            // admin.Show();
+            // this.Hide();
         }
 
         private void btnSellActives_Click(object sender, EventArgs e)
@@ -93,5 +98,21 @@ namespace investmoney.src.Views
         {
             reloadInfo();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Advertise.Calculate admin = new Advertise.Calculate(this);
+            admin.Show();
+            //this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Advertise.Calculate admin = new Advertise.Calculate(this);
+            admin.Show();
+           //this.Hide();
+        }
+
+       
     }
 }

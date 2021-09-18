@@ -16,5 +16,22 @@ namespace investmoney.src.Controllers
             List<TransactionModel> list = transactions.LoadUserTransactions(user);
             return list;
         }
+
+        public int calculateMaked(List<Wallet> wallet, int user,string dia, string mes, string ano)
+        {
+            TransactionDao transactions = new TransactionDao();
+            var list = transactions.calculateMaked(wallet, user, dia, mes, ano);
+            return list;
+            
+
+        }
+        public int calculateMakedNaoRealizado(List<Wallet> wallet, int user, string dia, string mes, string ano)
+        {
+            TransactionDao transactions = new TransactionDao();
+            var list = transactions.calculateMakedNotRealizado(wallet, user, dia,  mes, ano);
+            return list;
+
+
+        }
     }
 }

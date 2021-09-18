@@ -17,6 +17,7 @@ namespace investmoney.src.Models
         public string date { get; set; }
 
         public double totalcost { get; set; }
+        public string type { get; set; }
 
         public int getUserId()
         {

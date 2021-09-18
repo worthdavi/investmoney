@@ -39,6 +39,7 @@ namespace investmoney.src.Views
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableActives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableHistory)).BeginInit();
             this.SuspendLayout();
@@ -60,12 +61,14 @@ namespace investmoney.src.Views
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataTableActives.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataTableActives.GridColor = System.Drawing.Color.White;
-            this.dataTableActives.Location = new System.Drawing.Point(376, 4);
+            this.dataTableActives.Location = new System.Drawing.Point(501, 5);
+            this.dataTableActives.Margin = new System.Windows.Forms.Padding(4);
             this.dataTableActives.MultiSelect = false;
             this.dataTableActives.Name = "dataTableActives";
             this.dataTableActives.ReadOnly = true;
             this.dataTableActives.RowHeadersVisible = false;
-            this.dataTableActives.Size = new System.Drawing.Size(569, 199);
+            this.dataTableActives.RowHeadersWidth = 51;
+            this.dataTableActives.Size = new System.Drawing.Size(759, 245);
             this.dataTableActives.TabIndex = 2;
             // 
             // btnPainelAdministrativo
@@ -73,9 +76,10 @@ namespace investmoney.src.Views
             this.btnPainelAdministrativo.BackgroundImage = global::investmoney.Properties.Resources.Engrenagem_Bicolor_PNG;
             this.btnPainelAdministrativo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPainelAdministrativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPainelAdministrativo.Location = new System.Drawing.Point(6, 359);
+            this.btnPainelAdministrativo.Location = new System.Drawing.Point(8, 442);
+            this.btnPainelAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.btnPainelAdministrativo.Name = "btnPainelAdministrativo";
-            this.btnPainelAdministrativo.Size = new System.Drawing.Size(35, 33);
+            this.btnPainelAdministrativo.Size = new System.Drawing.Size(47, 41);
             this.btnPainelAdministrativo.TabIndex = 9;
             this.btnPainelAdministrativo.UseVisualStyleBackColor = true;
             this.btnPainelAdministrativo.Click += new System.EventHandler(this.btnPainelAdministrativo_Click);
@@ -84,9 +88,10 @@ namespace investmoney.src.Views
             // 
             this.pnlLogoHome.BackgroundImage = global::investmoney.Properties.Resources.investmoney_brand;
             this.pnlLogoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlLogoHome.Location = new System.Drawing.Point(6, 4);
+            this.pnlLogoHome.Location = new System.Drawing.Point(8, 5);
+            this.pnlLogoHome.Margin = new System.Windows.Forms.Padding(4);
             this.pnlLogoHome.Name = "pnlLogoHome";
-            this.pnlLogoHome.Size = new System.Drawing.Size(344, 100);
+            this.pnlLogoHome.Size = new System.Drawing.Size(459, 123);
             this.pnlLogoHome.TabIndex = 8;
             // 
             // btnBuyActives
@@ -98,9 +103,10 @@ namespace investmoney.src.Views
             this.btnBuyActives.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuyActives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuyActives.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBuyActives.Location = new System.Drawing.Point(185, 359);
+            this.btnBuyActives.Location = new System.Drawing.Point(247, 442);
+            this.btnBuyActives.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuyActives.Name = "btnBuyActives";
-            this.btnBuyActives.Size = new System.Drawing.Size(165, 49);
+            this.btnBuyActives.Size = new System.Drawing.Size(220, 60);
             this.btnBuyActives.TabIndex = 3;
             this.btnBuyActives.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBuyActives.UseVisualStyleBackColor = false;
@@ -111,9 +117,10 @@ namespace investmoney.src.Views
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 411);
+            this.label1.Location = new System.Drawing.Point(179, 506);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 15);
+            this.label1.Size = new System.Drawing.Size(251, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Or click here to sell your actions";
             this.label1.Click += new System.EventHandler(this.btnSellActives_Click);
@@ -125,32 +132,36 @@ namespace investmoney.src.Views
             this.dataTableHistory.AllowUserToResizeColumns = false;
             this.dataTableHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataTableHistory.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataTableHistory.ColumnHeadersHeight = 29;
             this.dataTableHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataTableHistory.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataTableHistory.GridColor = System.Drawing.Color.White;
-            this.dataTableHistory.Location = new System.Drawing.Point(376, 222);
+            this.dataTableHistory.Location = new System.Drawing.Point(501, 273);
+            this.dataTableHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dataTableHistory.Name = "dataTableHistory";
             this.dataTableHistory.ReadOnly = true;
             this.dataTableHistory.RowHeadersVisible = false;
             this.dataTableHistory.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataTableHistory.Size = new System.Drawing.Size(569, 200);
+            this.dataTableHistory.Size = new System.Drawing.Size(759, 246);
             this.dataTableHistory.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(628, 206);
+            this.label2.Location = new System.Drawing.Point(837, 254);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(124, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "This is your wallet.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(593, 425);
+            this.label3.Location = new System.Drawing.Point(791, 523);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 13);
+            this.label3.Size = new System.Drawing.Size(212, 17);
             this.label3.TabIndex = 14;
             this.label3.Text = "This is your transactions history.";
             // 
@@ -161,18 +172,30 @@ namespace investmoney.src.Views
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(6, 107);
+            this.label4.Location = new System.Drawing.Point(8, 132);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(344, 249);
+            this.label4.Size = new System.Drawing.Size(458, 306);
             this.label4.TabIndex = 15;
             this.label4.Text = "Welcome to your homepage. Here you can see your actions balance and more!";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 442);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Relatórios";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 450);
+            this.ClientSize = new System.Drawing.Size(1276, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -183,6 +206,7 @@ namespace investmoney.src.Views
             this.Controls.Add(this.pnlLogoHome);
             this.Controls.Add(this.dataTableActives);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,5 +229,6 @@ namespace investmoney.src.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }
