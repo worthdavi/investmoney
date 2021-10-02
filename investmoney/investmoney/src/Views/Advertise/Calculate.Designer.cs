@@ -43,6 +43,7 @@ namespace investmoney.src.Views.Advertise
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -142,11 +143,21 @@ namespace investmoney.src.Views.Advertise
             this.textBox4.Size = new System.Drawing.Size(85, 22);
             this.textBox4.TabIndex = 11;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(236, 343);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(386, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Lucro já com imposto de 15% se venda for acima de 20000.";
+            // 
             // Calculate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
@@ -177,5 +188,6 @@ namespace investmoney.src.Views.Advertise
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
     }
 }
