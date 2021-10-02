@@ -12,8 +12,18 @@ using System.Linq;
 
 namespace investmoney.src.DAO
 {
+    /// <summary>
+    /// A classe **Auth** é uma classe responsável por gerenciar a autenticação do usuário.
+    /// </summary>
     class Auth
     {
+
+        /// <summary>
+        /// O metodo que faz login do usuario na plataforma.s.
+        /// </summary>
+        /// <param name="username">O nome do cadatrado na plataforma</param>
+        /// <param name="password">A senha que foi cadastrado ao realizar o cadastro na plataforma.</param>
+        /// <returns>Retorna true caso o login for realizado com sucesso ou false caso ocorra um erro na operação.</returns>
         public static bool Login(string username, string password)
         {
 

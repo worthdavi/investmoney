@@ -13,9 +13,15 @@ using System.Threading.Tasks;
 
 namespace investmoney.src.DAO
 {
-
+    /// <summary>
+    /// A classe **OfferDao** é uma classe DAO, responsável por abragnder todas a ações referente a Offer que interage com o banco de dados.
+    /// </summary>
     class OfferDao
     {
+        /// <summary>
+        /// O metodo retorna lista todas as operação do usuário relacionado ao actives.
+        /// </summary>
+        /// <returns>Retorna lista todas as operação do usuário relacionado aos actives.</returns>
         public List<OfferModel> LoadOffers()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -25,6 +31,16 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo que faz registo da ccompra do active.
+        /// </summary>
+        /// <param name="price">O preço do active a ser comprado</param>
+        /// <param name="amount">A quantidade do active que deseja comprar.</param>
+        /// <param name="user">O usuário que está comprando.</param>
+        /// <param name="isNew">Se é uma nova compra.</param>
+        /// <param name="localDate">A data da compra.</param>
+        /// <param name="ticker">O ativo que desea comprar.</param>
+        /// <returns>Não há retorno</returns>
         public void BuyActive(double price, int amount, User user, bool isNew, DateTime date, string ticker, string type)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -45,6 +61,13 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo que faz registo da venda do active.
+        /// </summary>
+        /// <param name="offer">O oferta de de compra</param>
+        /// <param name="user">O usuário que está vendendo.</param>
+        /// <param name="date">A data da compra.</param>
+        /// <returns>Não há retorno</returns>
         public void SellActive(OfferModel offer, User user, DateTime date, string type)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -58,6 +81,10 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo que lista os actives vendidos.
+        /// </summary>
+        /// <returns>Retorna a lista dos actives vendidos</returns>
         public List<TransactionModel> GetActiveSell()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))

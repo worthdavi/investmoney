@@ -10,10 +10,22 @@ using System.Threading.Tasks;
 
 namespace investmoney.src.DAO
 {
+    /// <summary>
+    /// A classe **UserDao** é uma classe DAO, responsável por abragnder todas a ações referente a User que interage com o banco de dados.
+    /// </summary>
     class UserDao
     {
 
 
+        /// <summary>
+        /// O metodo que faz registo do usuário no banco de dados.
+        /// </summary>
+        /// <param name="nome">O nome do usuário a ser registado.</param>
+        /// <param name="email">A email do usuário a ser registado.</param>
+        /// <param name="password">A senha do usuário a ser registado.</param>
+        /// <param name="tipo">A tipo do usuário a ser registado, podendo ser Admin e Comum.</param>
+        /// <param name="balance">A valor da carteira que usuário deseja investir na plataforma.</param>
+        /// <returns>Retorna 1 se o registo do usuario for realizado com sucesso ou 0 se caso ocorra um erra na operação.</returns>
         public int Register(String nome, String email, String password, int tipo)
         {
             User UserToSave = new User();
@@ -33,6 +45,10 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo lista todos os usuários no banco de dados.
+        /// </summary>
+        /// <returns>Retorna uma lista usuários.</returns>
         public static List<User> GetUserList()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -41,6 +57,11 @@ namespace investmoney.src.DAO
                 return output.ToList();
             }
         }
+        /// <summary>
+        /// O metodo verifica se já existe um email cadastrado ao tentar registrar um novo usuário.
+        /// </summary>
+        /// <param name="email">O email que do usuario cadastrar na plataforma.</param>
+        /// <returns>Retorna true para casa haja um email já cadastrado ou false casa não tenha.</returns>
         public static bool IsEmailRepeated(string email)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -54,6 +75,11 @@ namespace investmoney.src.DAO
             }
             return false;
         }
+
+        /// <summary>
+        /// O metodo verifica se já existe um nome cadastrado ao tentar registrar um novo usuário.
+        /// </summary>
+        /// <param name="name">O nome do usuário a ser registado.</param>
         public static bool IsUsernameRepeated(string name)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
