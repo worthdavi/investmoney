@@ -207,7 +207,7 @@ namespace investmoney.src.Views.Advertise
             this.Controls.Add(this.pnlLogo);
             this.Controls.Add(this.panel1);
             this.Name = "Buy";
-            this.Text = "Buy";
+            this.Text = "Sell";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

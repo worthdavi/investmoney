@@ -12,8 +12,19 @@ using System.Data.Common;
 
 namespace investmoney.src.DAO
 {
+    /// <summary>
+    /// A classe **ActiveDao** é uma classe DAO, responsável por abragnder todas a ações referente a Active que interage com o banco de dados.
+    /// </summary>
     class ActiveDao
     {
+        /// <summary>
+        /// O metodo que faz registo de active no banco de dados.
+        /// </summary>
+        /// <param name="ticker">O nome do active a ser registado</param>
+        /// <param name="amount">A quantidade do active que deseja colocar para vender.</param>
+        /// <param name="price">O preço de venda do active que está cadastrando.</param>
+        /// <param name="description">Defina uma descrição do activo que está registrando.</param>
+        /// <returns>Retorna 1 se o registo do active for realizado com sucesso ou 0 se caso ocorra um erra na operação.</returns>
         public int Create(String ticker, int amount, int price, String description)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -23,6 +34,7 @@ namespace investmoney.src.DAO
             }
         }
 
+      
         public static int SaveActive(ActiveModel active)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -32,6 +44,10 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo lista os nome de todos os Active registrado.
+        /// </summary>
+        /// <returns>Retorna todos os Active registrado.</returns>
         public List<String> GetActivesNames()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -42,6 +58,12 @@ namespace investmoney.src.DAO
                 return output.ToList();
             }
         }
+
+        /// <summary>
+        /// O metodo retona a quantidade de um Active.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna a quantidade de um Active a partir de um ticker especifico</returns>
         public int GetActiveAmountByTickerId(string ticker)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -56,6 +78,11 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo retorna o preço de um Active.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna o preço de um Active a partir de um ticker especifico</returns>
         public double GetActivePriceByTickerId(string ticker)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -70,6 +97,12 @@ namespace investmoney.src.DAO
             }
         }
 
+
+        /// <summary>
+        /// O metodo retorna um Active especifico.
+        /// </summary>
+        /// <param name="ticker">O ticker que deseja buscar.</param>
+        /// <returns>Retorna um Active especifico a partir de ticker.</returns>
         public ActiveModel GetActiveByTicker(string ticker)
         {
             ActiveModel active = new ActiveModel();
@@ -91,6 +124,10 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo lista todos os Actives no banco de dados.
+        /// </summary>
+        /// <returns>Lista de todos os Actives no banco de dados</returns>
         public List<ActiveModel> GetActiveList()
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))

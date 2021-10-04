@@ -1,5 +1,4 @@
-﻿
-using investmoney.src.Controllers;
+﻿using investmoney.src.Controllers;
 using investmoney.src.DAO;
 
 namespace investmoney.src.Views.Advertise

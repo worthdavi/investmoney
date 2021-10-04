@@ -11,8 +11,16 @@ using System.Threading.Tasks;
 
 namespace investmoney.src.DAO
 {
+    /// <summary>
+    /// A classe **WalletDao** é uma classe DAO, responsável por abragnder todas a ações referente a Waller que interage com o banco de dados.
+    /// </summary>
     class WalletDao
     {
+        /// <summary>
+        /// O metodo carregar todos os Wallet do usuário no banco de dados.
+        /// </summary>
+        /// <param name="userId">O id do usuário</param>
+        /// <returns>Retorna uma lista de Wallet por usuário.</returns>
         public List<Wallet> LoadUserWallet(int userId)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -26,6 +34,11 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo carregar todos os Wallet por usuário no banco de dados.
+        /// </summary>
+        /// <param name="userId">O id do usuário</param>
+        /// <returns>Retorna uma lista de Wallet por usuário.</returns>
         public List<String> GetActivesByUserId(int userId)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
@@ -37,6 +50,12 @@ namespace investmoney.src.DAO
             }
         }
 
+        /// <summary>
+        /// O metodo retorna a quantidade dos actives do Wallet por usuário e ticker especificos.
+        /// </summary>
+        /// <param name="userId">O id do usuário que deseja buscar os Wallets.</param>
+        /// <param name="ticker">O ticker que deseja buscar os Wallets.</param>
+        /// <returns>Retorna a quantidade dos actives de todos os Wallet por usuário e ticker caso a operação seja sucesso ou 0 caso ocorra erro na operação.</returns>
         public int GetActivesAmountByTickerId(int userId, string ticker)
         {
             using (IDbConnection connection = new SQLiteConnection(LoadConnectionString()))
