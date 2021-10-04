@@ -34,8 +34,46 @@ namespace investmoney.src.DAO
                 var valueTotal = 0.0;
 
                 var l = 0.0;
-  
-                if (wallet.Count() > 0)
+                //string sqlV = "SELECT ticker, SUM(amount) as soma, SUM((price * amount)) as vendido, date FROM transactions GROUP BY ticker HAVING DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "')  and type = 'V' and user_id = '" + user + "' ;";
+               // string sqlC = "SELECT ticker, SUM(amount) as soma, SUM((price * amount)) as vendido, date FROM transactions GROUP BY ticker HAVING DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "')  and type = 'C' and user_id = '" + user + "' ;";
+               // var vend = connection.Query(sqlV, new DynamicParameters()).AsList();
+
+                //var comp = connection.Query(sqlC, new DynamicParameters()).AsList();
+                ActiveDao activeDa = new ActiveDao();
+                var activesNames = activeDa.GetActivesNames();
+
+                foreach (var item in activesNames)
+                {
+                    string totalVenda = "SELECT SUM((price * amount)) as soma, SUM(amount) as amount FROM transactions WHERE DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "') and  type = 'V' and user_id = '" + user + "' and ticker = '" + item + "' ;";
+                    var totalVendaImposto = connection.Query<dynamic>(totalVenda, new DynamicParameters());
+                    valueTotal = valueTotal + Convert.ToDouble(totalVendaImposto.First().soma);
+
+                    string consultaTotal = "SELECT SUM((price * amount)) as soma FROM transactions WHERE DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "') and  type = 'C' and user_id = '" + user + "' and ticker = '" + item + "' ;";
+                    var custoTotal1 = connection.Query<dynamic>(consultaTotal, new DynamicParameters());
+
+                    var price_medio = custoTotal1.First().soma / totalVendaImposto.First().soma;
+                    ActiveController activeController = new ActiveController();
+                    var ticker = activeController.GetActiveByTicker(item);
+                    var cotacao = Convert.ToDouble(ticker.price); // Convert.ToDouble(ticker.price);
+                    var total = price_medio * totalVendaImposto.First().amount;
+                    var valorMercado = totalVendaImposto.First().amount * cotacao;
+                    var Lucro_prejuizo = Convert.ToDouble(valorMercado) - Convert.ToDouble(total);
+                    l = Lucro_prejuizo + l;
+
+                }
+                if ((valueTotal) > 20000)
+                {
+                    var imposto = l - (l * 0.15);
+
+                    return Convert.ToInt32(imposto);
+                }
+                else
+                {                    
+                    return Convert.ToInt32(l);
+                }
+                return Convert.ToInt32(l);
+                /*
+                 * if (wallet.Count() > 0)
                 {
                     
                     foreach (var item in wallet)
@@ -87,9 +125,14 @@ namespace investmoney.src.DAO
                     }
                     
 
+<<<<<<< HEAD
                 }
  
                 return Convert.ToInt32(l);
+=======
+                }*/
+
+>>>>>>> 0712d1bac803ce7321485c1f2b30ab07c1d0224b
 
             }
         }
@@ -102,23 +145,21 @@ namespace investmoney.src.DAO
             {
                 var dateStart = $"{ano}-{mes}-{dia}";
                 var dateEnd = $"{ano}-{mes}-30";
-
                 var l = 0.0;
+                var valueTotal = 0.0;
+
+
                 if (wallet.Count() > 0)
                 {
 
                     foreach (var item in wallet)
                     {
                         string consultaCompra = "SELECT SUM(amount) as soma, date FROM transactions WHERE DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "')  and type = 'C' and user_id = '" + user + "' and ticker = '" + item.ticker + "' ;";
-                        string consultaVenda = "SELECT SUM(amount) as soma FROM transactions WHERE DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "') and  type = 'V' and user_id = '" + user + "' and ticker = '" + item.ticker + "' ;";
                         string consultaTotal = "SELECT SUM((price * amount)) as soma FROM transactions WHERE DATE(substr(date,7,4)||'-'||substr(date,4,2)||'-'||substr(date,1,2)) BETWEEN DATE('" + dateStart + "') AND DATE('" + dateEnd + "') and  type = 'C' and user_id = '" + user + "' and ticker = '" + item.ticker + "' ;";
 
-                        var qtdVend = connection.Query<int>("select SUM(amount) as soma from transactions where type = 'V' and user_id = '" + user + "' and ticker = '" + item.ticker + "' and date BETWEEN '01/09/2021' AND '30/09/2021'  ", new DynamicParameters());
-
-
                         var qtdComp = connection.Query<dynamic>(consultaCompra, new DynamicParameters());
-                        // "totalcost"
                         var valorTotal = connection.Query<dynamic>(consultaTotal, new DynamicParameters());
+                        valueTotal = valueTotal + Convert.ToDouble(valorTotal.First().soma);
 
                         var price_medio = valorTotal.First().soma / qtdComp.First().soma;
                         ActiveController activeController = new ActiveController();
@@ -129,14 +170,6 @@ namespace investmoney.src.DAO
                         var valorMercado = item.amount * cotacao;
                         Console.WriteLine(valorMercado);
                         var Lucro_prejuizo = valorMercado - custoTotal;
-                        // Console.WriteLine(Lucro_prejuizo);
-                        // ativo, amount, price, average_price, total_cost, market_value, LP, DN
-                        var dn = "N";
-                        var user_id = 1;
-                        //  connection.Execute("insert into result (ativo, amount, average_price, price, total_cost, market_value, LP, DN, user_id) values ('" +
-                        //    "" + wallet[0].ticker + "', '" + qtdVend.First() + "', '" + price_medio + "', '" + cotacao + "', '" + total + "', '" + valorMercado + "', '" + Lucro_prejuizo + "' , '" + dn + "', '" + user_id + "')");
-                        // var soma = connection.Query<int>("select SUM(LP) as soma from result where user_id =  " + user_id + ";", new DynamicParameters());
-                        // Console.WriteLine(soma.First());
                         if (Lucro_prejuizo == null)
                         {
                             l = l + l;
@@ -146,11 +179,20 @@ namespace investmoney.src.DAO
                             l = Lucro_prejuizo + l;
                         }
                     }
-                    return Convert.ToInt32(l);
+                    if ((1 * valueTotal) > 20000)
+                    {
+                        var value = l - (l * 0.15);
+                        //Console.WriteLine(imposto);
+                        return Convert.ToInt32(value);
+                    }
+                    else
+                    {
+                        return Convert.ToInt32(l);
+                    }
+                   
 
                 }
-
-
+                
                 return Convert.ToInt32(l);
 
 
